@@ -43,6 +43,7 @@ Pointing out these thing:
 - draw the dry run for the optimised approach
 - Time complexity and space complexity of the optimised approach 
 - solution code 
+# question where I went wrong & what is the correction 
  
 # things  told by the instructor
 
@@ -53,3 +54,5 @@ Pointing out these thing:
 5. Implement the solution 
 6. Testing and debugging 
 7. Optimize and review 
+
+

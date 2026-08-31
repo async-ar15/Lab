@@ -1,3 +1,14 @@
+
+# before solving the question, things  told by the instructor
+
+1. Understand the problem
+2. Devise a strategy (find edge cases)
+3. Breakdown the problem if possible 
+4. Write a pseudocode
+5. Implement the solution 
+6. Testing and debugging 
+7. Optimize and review 
+
 # understanding the question 
 
 Pointing out these thing:

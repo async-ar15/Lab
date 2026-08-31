@@ -153,3 +153,4 @@ Here's a record of things to watch out for if I code this in an interview:
 3. **Loop Bounds (Index out of bounds):**
    - *My mistake:* Doing a `while (j > n)` or confusing the length variables.
    - *Correction:* Standard `for` loops are safest here. `for (int j = 1; j < nums.length; j++)`. It clearly starts `j` at 1, goes until the end, and handles incrementing automatically.
+   

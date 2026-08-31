@@ -22,3 +22,11 @@ When an interview problem restricts you to **Time = $O(n)$** and **Space = $O(1)
 When you see **Time = $O(n \log n)$** and **Space = $O(1)$**, immediately think of:
 1. **Sorting the array first:** (Though keep in mind some languages use $O(\log n)$ or $O(n)$ space under the hood for sorting).
 2. **Binary Search in a Loop:** Iterating through the array $O(n)$ and doing an iterative binary search $O(\log n)$ for each element.
+
+### Linked List Specific Learnings
+- **Nodes range `[0, x]`**: 
+  - A very small upper bound (like 300) means even $O(n^2)$ or $O(n^3)$ algorithms will pass easily without TLE. But often there's a simple $O(n)$ solution.
+  - The `0` lower bound is the most critical part! It means the input can be completely empty (`head == null`). Your code MUST always handle this edge case explicitly to avoid `NullPointerException`s.
+- **Sorted in ascending order**: 
+  - For arrays or linked lists, this means duplicate values are guaranteed to be grouped right next to each other. 
+  - Because of this, you don't need a `HashSet` (which takes $O(n)$ space) to track seen elements. You can find duplicates just by checking adjacent nodes (`current.val == current.next.val`), which reduces space complexity to strictly $O(1)$.

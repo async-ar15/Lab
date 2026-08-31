@@ -1,18 +1,20 @@
 # understanding the question 
+
 Pointing out these thing:
-    i. Draw examples
-    ii. Clarify edge cases
-    iii. Confirm input/output
-    iv. Important key words for the approach 
-    v. basic level of understanding of the question & what kinda solution might work for us 
+- i. Draw examples
+- ii. Clarify edge cases
+- iii. Confirm input/output
+- iv. Important key words for the approach 
+- v. basic level of understanding of the question & what kinda solution might work for us 
 
 # understanding the constraints
+
 Pointing out these thing: 
-    i. Time complexity
-    ii. Space complexity
-    iii. Input space, output space
-    iv. What kind of data structure or algorithm can be used here
-    v. how constraints help us to find the solution 
+- i. Time complexity
+- ii. Space complexity
+- iii. Input space, output space
+- iv. What kind of data structure or algorithm can be used here
+- v. how constraints help us to find the solution 
 
 # Solution 
 
@@ -44,12 +46,10 @@ Pointing out these thing:
  
 # things  told by the instructor
 
-1.Understand the problem
-2.Devise a strategy (find edge cases)
-3.Breakdown the problem if possible 
-4.Write a pseudocode
-5.Implement the solution 
-6.Testing and debugging 
+1. Understand the problem
+2. Devise a strategy (find edge cases)
+3. Breakdown the problem if possible 
+4. Write a pseudocode
+5. Implement the solution 
+6. Testing and debugging 
 7. Optimize and review 
-
-  

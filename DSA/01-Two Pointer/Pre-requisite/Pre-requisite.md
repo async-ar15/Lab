@@ -23,7 +23,7 @@ Key Characteristics:
 
 In Java, you have fixed-size primitive arrays and dynamic ArrayLists. You will use both frequently depending on the problem.
 
-```
+```java
 // --- PRIMITIVE ARRAYS (Fixed Size) ---
 int[] arr = {10, 20, 30, 40, 50};
 
@@ -76,19 +76,20 @@ Key Characteristics:
 
 - Mutable (in C, C++): Strings can be changed in-place like normal arrays.
 
-Operation	Time Complexity
-Access (Index)	$O(1)$
-Search (Value)	$O(N)$
-Concatenation / Append	$O(N)$ (due to immutability)
-Substring (length K)	$O(K)$
-Space Complexity	$O(N)$
+| Operation | Time Complexity |
+| :--- | :--- |
+| Access (Index) | $O(1)$ |
+| Search (Value) | $O(N)$ |
+| Concatenation / Append | $O(N)$ (due to immutability) |
+| Substring (length K) | $O(K)$ |
+| Space Complexity | $O(N)$ |
 
 
 ## Code snippets 
 
 - In java string are mutuable 
 
-```
+```java
 String s = "hello";
 
 // 1. Access by Index - O(1)
@@ -128,22 +129,23 @@ A Linked List is a collection of elements (called Nodes) that are not stored in 
 
 Types:
 
-Singly Linked List: Nodes point only to the next node (A -> B -> C).
-Doubly Linked List: Nodes point to the next AND the previous node (A <-> B <-> C).
+- Singly Linked List: Nodes point only to the next node (A -> B -> C).
+- Doubly Linked List: Nodes point to the next AND the previous node (A <-> B <-> C).
 
 ## table of content
 
-Operation	Time Complexity
-Access (Index)	$O(N)$
-Search (Value)	$O(N)$
-Insert/Delete (at Head)	$O(1)$
-Insert/Delete (Middle/End)	$O(N)$ (due to finding the spot)
-Space Complexity	$O(N)$ (uses slightly more memory than arrays due to pointers)
+| Operation | Time Complexity |
+| :--- | :--- |
+| Access (Index) | $O(N)$ |
+| Search (Value) | $O(N)$ |
+| Insert/Delete (at Head) | $O(1)$ |
+| Insert/Delete (Middle/End) | $O(N)$ (due to finding the spot) |
+| Space Complexity | $O(N)$ (uses slightly more memory than arrays due to pointers) |
 
 ## code snippets
 
 
-```
+```java
 
 // 1. Defining the Node (Standard LeetCode definition)
 class ListNode {

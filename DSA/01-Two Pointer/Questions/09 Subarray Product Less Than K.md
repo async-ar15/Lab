@@ -95,17 +95,17 @@ class Solution {
         
         for (int right = 0; right < nums.length; right++) {
             // Expand the window
-            runningProduct *= nums[right];
+            runningProduct = runningProduct * nums[right];
             
             // Shrink the window if the product gets too big
             while (runningProduct >= k) {
-                runningProduct /= nums[left];
+                runningProduct = runningProduct / nums[left];
                 left++;
             }
             
             // Math trick: The number of valid contiguous subarrays ending at 'right' 
             // is exactly equal to the size of the window!
-            count += (right - left + 1);
+            count = count + (right - left + 1);
         }
         
         return count;
@@ -133,7 +133,7 @@ class Solution {
 
 2. **Not understanding the Sliding Window math:**
    - *My mistake:* Getting completely stuck on how to count the subarrays without manually looping through them all. 
-   - *Correction:* The magic formula is `count += (right - left + 1)`. If you have a valid window of elements, the number of new valid subarrays that end at the `right` pointer is exactly equal to the size of the window!
+   - *Correction:* The magic formula is `count = count + (right - left + 1)`. If you have a valid window of elements, the number of new valid subarrays that end at the `right` pointer is exactly equal to the size of the window!
 
 3. **Java Syntax Struggles:**
    - *My mistake:* Getting lost in how to actually type out the `for` loops and `while` loops in Java (`while(subarr < 1) { left++ }`).

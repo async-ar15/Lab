@@ -103,7 +103,7 @@ class Solution {
                     // The Mathematics trick:
                     // If arr[right] works with arr[left], then everything 
                     // before right will also work with arr[left] because it's sorted!
-                    count += (right - left);
+                    count = count + (right - left);
                     left++; // Now let's try a bigger left
                 } else {
                     // Too big or equal, need to shrink the sum
@@ -125,7 +125,7 @@ The main traps for this problem revolve around the mathematics:
 
 1. **Forgetting to count `(right - left)`:**
    - *My mistake:* I just did `count++` and then `left++` when I found a sum that was smaller than the target.
-   - *Correction:* This completely skips checking the other elements between `left` and `right`. If `left` and `right` work, then `left` and `right-1` definitely work, `left` and `right-2` work, etc. You MUST count all of them at once using `count += (right - left)`.
+   - *Correction:* This completely skips checking the other elements between `left` and `right`. If `left` and `right` work, then `left` and `right-1` definitely work, `left` and `right-2` work, etc. You MUST count all of them at once using `count = count + (right - left)`.
 
 2. **Using the wrong loop condition:**
    - *My mistake:* Writing `if (currentSum <= sum)`.

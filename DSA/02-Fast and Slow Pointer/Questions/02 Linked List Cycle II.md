@@ -107,7 +107,39 @@ RETURN null // No cycle found
 
 - **Solution Code (Java):**
 ```java
-// Write your Java code here based on the pseudo-code!
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
+        // Step 1: Handle edge cases
+        if (head == null) return null;
+        
+        ListNode slow = head;
+        ListNode fast = head;
+        
+        // Step 2: Find the collision point
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            
+            // We found a cycle!
+            if (slow == fast) {
+                // Step 3: Reset one pointer to head (let's use a new 'start' pointer)
+                ListNode start = head;
+                
+                // Step 4: Move both at the same speed until they collide again
+                while (start != slow) {
+                    start = start.next;
+                    slow = slow.next;
+                }
+                
+                // The exact node where they collide is the cycle's start point
+                return start;
+            }
+        }
+        
+        // Fast reached the end of the list, no cycle.
+        return null;
+    }
+}
 ```
 
 # Things told by the instructor
@@ -131,3 +163,25 @@ RETURN null // No cycle found
 2. **The Algorithm Name Mix-up:**
    - *My mistake:* Calling it the "Floyd-Warshall algorithm".
    - *Correction:* It is **Floyd's Cycle-Finding Algorithm**. Floyd-Warshall is a completely different (and much more complex) algorithm used for finding the shortest path between all pairs of nodes in a weighted graph!
+
+
+```java
+ public class LinkedListCycle2{
+ 
+	 public ListNode detectCycle(ListNode head){
+	 if(head == null){
+		 return null;
+		 }
+
+ListNode slow = head, fast = head;
+
+while ( fast != null && fast.next == null) return null;
+while (head != slow){
+		head = head.next;
+		slow = slow.next;
+		}		 
+	 }
+ }
+
+
+```

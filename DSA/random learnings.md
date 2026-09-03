@@ -10,6 +10,7 @@
 **TL;DR:** 
 - **Time limit:** Array size $10^4$ to $10^5$ $\rightarrow$ $O(n^2)$ will give TLE. You must use $O(n)$ or $O(n \log n)$.
 - **Space limit:** "Constant extra space" $\rightarrow$ Strictly $O(1)$ space complexity.
+- **Max Values:** The constraint `n <= 2^31 - 1` (which is `2,147,483,647`) is the exact maximum value for a standard 32-bit signed integer. This tells you that standard `int` variables will not overflow and you do not need to use `long`.
 
 ### Constraint Cheat Codes (The "Trick")
 When an interview problem restricts you to **Time = $O(n)$** and **Space = $O(1)$**, your brain should immediately jump to these specific patterns:

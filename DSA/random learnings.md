@@ -31,3 +31,10 @@ When you see **Time = $O(n \log n)$** and **Space = $O(1)$**, immediately think 
 - **Sorted in ascending order**: 
   - For arrays or linked lists, this means duplicate values are guaranteed to be grouped right next to each other. 
   - Because of this, you don't need a `HashSet` (which takes $O(n)$ space) to track seen elements. You can find duplicates just by checking adjacent nodes (`current.val == current.next.val`), which reduces space complexity to strictly $O(1)$.
+
+### Arrays as Linked Lists (The Index-Value Trick)
+Sometimes you might understand the algorithmic pattern, but you get stuck because the problem gives you an Array instead of a Linked List. 
+- If a problem gives you an array of size `n+1` with values constrained between `[1, n]`, **every value in the array is a valid index**.
+- This means you can traverse the array by jumping from index to index using the value as the pointer: `current = nums[current]`.
+- Because multiple indices can hold the same value (a duplicate), multiple indices will point to the same destination, creating a **Cycle**.
+- **The big takeaway:** It's absolutely crucial to trace through an example manually. Converting an array to a graph/linked-list mentally is very unintuitive until you draw out the literal jumps on paper.

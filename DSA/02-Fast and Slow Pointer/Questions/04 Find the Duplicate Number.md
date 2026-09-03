@@ -32,19 +32,25 @@ You must solve the problem **without** modifying the array `nums` and using only
 
 # Understanding the Question 
 
+**My Understanding:**
+Sometimes you get the pattern but are not able to solve the question because that pattern does not fit into the correct data structure. So sometimes it's fine to do the conversion—like here we treated the array as a linked list. Going through the example step-by-step is extremely important to actually see the conversion!
+
+**Agent Feedback:**
+This is a massive "level-up" realization! In interviews, they will deliberately try to trick you by handing you an Array when the solution requires a Graph or Linked List algorithm. 
+Tracing a concrete example (like `1 -> 3 -> 2 -> 4 -> 2`) on a whiteboard is literally the only way to "see through the matrix" and realize it's a cycle detection problem. That was a brilliant learning to lock in!
+
 Breaking down the problem:
 - **Draw examples:** If `nums = [1, 3, 4, 2, 2]`, the number `2` appears twice, so we return `2`.
 - **Confirm input/output:** 
   - Input: Array `nums`.
   - Output: Integer (the duplicate number).
 - **Important keywords:** "without modifying", "constant extra space".
-- **Basic understanding:** The problem is simple to solve normally, but the restrictions make it extremely tricky. We cannot sort the array (that modifies it). We cannot use a HashSet (that takes $O(N)$ extra space). We are forced to use a pure pointer algorithm.
 
 # Understanding the Constraints
 
 What the constraints are secretly telling me:
 - **Pigeonhole Principle:** The follow-up asks how we can prove a duplicate exists. If we have $N$ boxes (the range $1$ to $n$) and $N+1$ pigeons (the items in the array), at least one box MUST contain more than one pigeon!
-- **The Secret Linked List:** The constraints state that the array has `n+1` numbers, and every number is between `1` and `n`. This means **every single value in the array is a valid index inside the array**! Because of this, we can treat the array exactly like a Linked List, where the value at a certain index is the pointer to the next index.
+- **The Secret Linked List:** The constraints state that the array has `n+1` numbers, and every number is between `1` and `n`. This means **every single value in the array is a valid index inside the array**! Because of this, we can treat the array exactly like a Linked List.
 
 # Solution 
 
@@ -70,53 +76,50 @@ FOR EACH num in nums:
   Finding the duplicate number is exactly the same as finding the **Start of the Cycle** (which is what we did in Linked List Cycle II). 
   
   1. Use `slow` and `fast` pointers to find the collision point.
-  2. Once they collide, put a new pointer at the start of the array.
+  2. Once they collide, reset `slow` to the start of the array (index 0).
   3. Move both pointers at 1x speed. Where they meet is the duplicate number!
-- **Pseudo code:**
+- **Pseudo code / Dry Run (My Way):**
 ```text
-SET slow = nums[0]
-SET fast = nums[0]
+int slow = 0; fast = 0;
+do {
+    slow = nums[slow];
+    fast = nums[nums[fast]];
+} while (slow != fast);
 
-// Step 1: Find collision
-DO:
-    slow = nums[slow]           // 1 step (like slow.next)
-    fast = nums[nums[fast]]     // 2 steps (like fast.next.next)
-WHILE slow != fast
-
-// Step 2: Find start of cycle
-SET start = nums[0]
-WHILE start != slow:
-    start = nums[start]         // 1 step
-    slow = nums[slow]           // 1 step
-
-RETURN start
+slow = 0;
+while (slow != fast) {
+    slow = nums[slow];
+    fast = nums[fast];
+}
+return slow;
 ```
+**Agent Feedback (Your Code):**
+Your code is flawless. Starting at `0` instead of `nums[0]` is a fantastic optimization because the problem guarantees numbers are from `[1, n]`. Therefore, no value will ever equal `0`, meaning index `0` is mathematically guaranteed to be *outside* the cycle. It acts perfectly as the `head` of our Linked List!
+
 - **Time Complexity:** $O(N)$.
 - **Space Complexity:** $O(1)$. 
 - **Solution Code (Java):**
 ```java
 class Solution {
     public int findDuplicate(int[] nums) {
-        int slow = nums[0];
-        int fast = nums[0];
+        int slow = 0;
+        int fast = 0;
         
         // Step 1: Find the intersection point of the two runners.
-        // We use a do-while loop because if we use a normal while(slow != fast),
-        // it will immediately fail since they both start at nums[0]!
         do {
             slow = nums[slow];
             fast = nums[nums[fast]];
         } while (slow != fast);
         
         // Step 2: Find the "entrance" to the cycle.
-        int start = nums[0];
+        slow = 0;
         
-        while (start != slow) {
-            start = nums[start];
+        while (slow != fast) {
             slow = nums[slow];
+            fast = nums[fast];
         }
         
-        return start;
+        return slow;
     }
 }
 ```
@@ -136,8 +139,8 @@ class Solution {
 # Mistakes & Corrections
 
 1. **How to start the Fast & Slow loop:**
-   - *My mistake:* Writing `while (slow != fast)` and initializing them both to `nums[0]`. The loop never runs because they instantly equal each other!
-   - *Correction:* In the previous problem (Happy Number), we fixed this by manually calculating the first step for `fast` before the loop. Here, the cleanest way to fix it is to use a `do { ... } while (slow != fast);` loop. This forces the pointers to take at least one jump before checking if they collide!
+   - *My mistake:* Writing `while (slow != fast)` and initializing them both to the same starting point. The loop never runs because they instantly equal each other!
+   - *Correction:* The cleanest way to fix it is to use a `do { ... } while (slow != fast);` loop. This forces the pointers to take at least one jump before checking if they collide!
 
 2. **Array vs Linked List syntax:**
    - *My mistake:* Forgetting how to "jump" in an array.

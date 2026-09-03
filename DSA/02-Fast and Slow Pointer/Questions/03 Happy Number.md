@@ -167,10 +167,3 @@ class Solution {
    - *My mistake:* Setting both `slow = n` and `fast = n` before the loop.
    - *Correction:* If you set them both to `n`, then your `while (slow != fast)` condition is instantly false, and the loop never even runs! You must give `fast` a head start by doing `int fast = getNext(n);` so they start at different values.
 
-
-
-```java
-
-
-
-```

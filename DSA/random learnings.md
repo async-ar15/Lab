@@ -38,3 +38,6 @@ Sometimes you might understand the algorithmic pattern, but you get stuck becaus
 - This means you can traverse the array by jumping from index to index using the value as the pointer: `current = nums[current]`.
 - Because multiple indices can hold the same value (a duplicate), multiple indices will point to the same destination, creating a **Cycle**.
 - **The big takeaway:** It's absolutely crucial to trace through an example manually. Converting an array to a graph/linked-list mentally is very unintuitive until you draw out the literal jumps on paper.
+
+### Data Structure Insights
+- **HashSet vs Frequency Maps:** A `HashSet` only tells you *if* an element exists, not *how many times* it exists. When solving problems (like sliding windows) where the *count* of characters/elements matters, you must use a `HashMap` or a fixed-size frequency array (e.g., `int[26]` for lowercase alphabets) to maintain the frequencies as the window shrinks and expands.

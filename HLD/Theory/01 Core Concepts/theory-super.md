@@ -1,4 +1,4 @@
-# Core Concepts — Theory Super
+# Core Concepts - Theory Super
 
 ## Global Mind Map: Core Concepts
 
@@ -38,7 +38,7 @@ graph TB
 
 # 1. Scalability
 
-## The Problem — The Growth Wall
+## The Problem - The Growth Wall
 A design that worked for 1,000 users will often collapse at 100,000 users. A single database might easily serve 100 queries per second, but catch fire at 10,000. Before scalability was understood systematically, companies had to completely rewrite their architectures from scratch every time they grew.
 
 ## The Core Idea
@@ -71,7 +71,7 @@ Adding more commodity machines and distributing the load across them.
 
 # 2. Availability
 
-## The Problem — Outages Cost Trust
+## The Problem - Outages Cost Trust
 A system can be perfectly scaled to handle 10 million requests per second, but if a single power supply fails and the entire system goes offline for 6 hours, it is useless.
 
 ## The Core Idea
@@ -101,7 +101,7 @@ Redundancy is the foundation of availability. You must have backup components.
 
 # 3. Reliability
 
-## The Problem — The Silent Liar
+## The Problem - The Silent Liar
 A payment system might be 100% "Available" (it always responds with HTTP 200), but if it accidentally charges a customer's credit card twice, the system is fundamentally broken. 
 
 ## The Core Idea
@@ -122,7 +122,7 @@ A payment system might be 100% "Available" (it always responds with HTTP 200), b
 
 # 4. Single Point of Failure (SPOF)
 
-## The Problem — The Achilles Heel
+## The Problem - The Achilles Heel
 If your architecture features 100 perfectly load-balanced, highly-available web servers... all sitting behind a single database, that single database is a SPOF. If it dies, the whole system dies.
 
 ## The Core Idea
@@ -144,7 +144,7 @@ SPOFs hide in plain sight. They aren't just servers:
 
 # 5. Latency vs Throughput vs Bandwidth
 
-## The Problem — Confused Terminology
+## The Problem - Confused Terminology
 People often say "We need more bandwidth to make the site faster" when they actually have a latency problem. Mixing these up leads to optimizing the wrong bottlenecks.
 
 ## The Core Idea (The Highway Analogy)
@@ -163,7 +163,7 @@ People often say "We need more bandwidth to make the site faster" when they actu
 
 # 6. Consistent Hashing
 
-## The Problem — The Cache Miss Storm
+## The Problem - The Cache Miss Storm
 If you have 5 cache servers, a naive way to route users is `hash(user_id) % 5`. 
 If Server 4 crashes, the formula becomes `hash(user_id) % 4`. Suddenly, the math changes for almost *every single user*. 80% of your users will be routed to a new, empty cache server. This triggers a massive cache miss storm that crushes your database.
 
@@ -183,7 +183,7 @@ Physical servers rarely distribute perfectly on a ring. To fix uneven load, we c
 
 # 7. CAP Theorem
 
-## The Problem — Network Partitions are Inevitable
+## The Problem - Network Partitions are Inevitable
 If a network cable is cut between your US-East and US-West data centers, they can no longer communicate. If a user in US-East updates their password, US-West cannot know about it. What happens when a user in US-West tries to log in?
 
 ## The Core Idea
@@ -202,7 +202,7 @@ When a distributed system experiences a network partition (P), it must choose be
 
 # 8. Failover
 
-## The Problem — Manual Intervention is Too Slow
+## The Problem - Manual Intervention is Too Slow
 If a primary database dies at 3:00 AM, waiting for an engineer to wake up, diagnose the issue, and manually route traffic to a backup database results in hours of downtime.
 
 ## The Core Idea
@@ -221,7 +221,7 @@ If a primary database dies at 3:00 AM, waiting for an engineer to wake up, diagn
 
 # 9. Fault Tolerance
 
-## The Problem — Hardware Fails
+## The Problem - Hardware Fails
 Amazon's US-East-1 region goes down, taking half the internet with it. If your application crashes because one AWS data center lost power, your system is not fault-tolerant.
 
 ## The Core Idea

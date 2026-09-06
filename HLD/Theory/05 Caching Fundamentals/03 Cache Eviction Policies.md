@@ -313,7 +313,7 @@ Wasteful Eviction: Items that haven’t expired but are still irrelevant occupy 
 Limited Flexibility: TTL doesn’t adapt to dynamic workloads or usage patterns.
 
 7. Two-Tiered Caching
-Two-Tiered Caching combines two layers of cache—usually a local cache (in-memory) and a remote cache (distributed or shared).
+Two-Tiered Caching combines two layers of cache-usually a local cache (in-memory) and a remote cache (distributed or shared).
 
 
 

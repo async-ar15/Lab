@@ -23,7 +23,7 @@ For example, the absolute value function is idempotent: `||-5|| = |-5| = 5`.
 
 Idempotency is a property of certain operations whereby executing the same operation multiple times produces the same result as executing it once.
 
-For example: If a request to delete an item is idempotent—all requests after the first will have no impact.
+For example: If a request to delete an item is idempotent-all requests after the first will have no impact.
 
 In programming, setting a value is idempotent, while incrementing a value is not.
 

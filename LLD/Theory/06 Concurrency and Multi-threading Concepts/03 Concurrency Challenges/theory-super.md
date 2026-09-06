@@ -1,4 +1,4 @@
-# Concurrency Challenges — Theory Super
+# Concurrency Challenges - Theory Super
 
 ## Global Mind Map: Concurrency Challenges
 
@@ -20,7 +20,7 @@ graph TB
 
 # 1. Deadlock
 
-## The Problem — The Silent Killer
+## The Problem - The Silent Killer
 Deadlock is one of the most dangerous bugs because it fails silently. The system doesn't crash, and no exceptions are thrown. Threads simply stop making progress forever, often only occurring in production under heavy load.
 
 ## The Core Idea
@@ -53,8 +53,8 @@ If transferring money between bank accounts, always lock the account with the lo
 
 # 2. Livelock
 
-## The Problem — The Illusion of Progress
-In a deadlock, CPU usage drops to zero because threads are sleeping. In a **livelock**, CPU usage spikes to 100%, logs fill up with retry messages, and network requests fire endlessly—yet zero actual work is completed.
+## The Problem - The Illusion of Progress
+In a deadlock, CPU usage drops to zero because threads are sleeping. In a **livelock**, CPU usage spikes to 100%, logs fill up with retry messages, and network requests fire endlessly-yet zero actual work is completed.
 
 ## The Core Idea
 **Livelock** occurs when threads are actively running (not blocked) but are trapped in a synchronized, unproductive loop of reacting to each other, like two people in a hallway repeatedly stepping to the same side to let the other pass.

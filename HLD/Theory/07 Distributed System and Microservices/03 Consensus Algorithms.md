@@ -77,13 +77,13 @@ The generals must have an algorithm to guarantee that (a) all loyal generals dec
 
 The loyal generals will all do what the algorithm says they should, but the traitors may do anything they wish. The algorithm must guarantee condition (a) regardless of what the traitors do. The loyal generals should not only reach an agreement but should agree upon a reasonable plan.
 
-Father of Distributed Systems Leslie Lamport proved that —
+Father of Distributed Systems Leslie Lamport proved that -
 
 If more than two-thirds of all nodes in a system are honest then consensus can be reached.
 
 This algorithm works on the above-mentioned principle. The distributed system is divided into three phases (pre-prepare, prepare, commit) and nodes are sequentially ordered with one node being the Primary node (or leader node) and others as the Secondary node (or backup node). The objective is that all non-faulty nodes help in achieving a consensus regarding the state of the system using the majority rule.
 
-pBFT consensus rounds are —
+pBFT consensus rounds are -
 
 The client sends a request to the primary node.
 The primary nodes broadcast the request to all secondary nodes.
@@ -93,7 +93,7 @@ The primary node is replaced in every consecutive round using the view change pr
 
 2. Other Notable Algorithms
 
-There are other voting-based consensus algorithms like —
+There are other voting-based consensus algorithms like -
 
 HotStuff
 Paxos
@@ -101,12 +101,12 @@ Raft etc…
 Proof-based Consensus Algorithms
 With the development of blockchain technology and distributed ledgers, networks became considerably broader and permissionless. For these circumstances, a proof-based consensus technique seemed preferable. In this case, a participant must show adequate proof of something in order to contribute to decision-making.
 
-There are several Proof-based Consensus algorithms —
+There are several Proof-based Consensus algorithms -
 
 Proof of Work (PoW)
 Proof of Stake (PoS) etc…
 Application of Distributed Consensus
-Consensus algorithms are used in many real-world applications in distributed or decentralized networks —
+Consensus algorithms are used in many real-world applications in distributed or decentralized networks -
 
 ✅ Blockchain and cryptocurrencies
 

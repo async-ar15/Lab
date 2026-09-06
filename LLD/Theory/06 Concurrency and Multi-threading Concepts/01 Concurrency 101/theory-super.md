@@ -1,4 +1,4 @@
-# Concurrency 101 — Theory Super
+# Concurrency 101 - Theory Super
 
 ## Global Mind Map: Concurrency 101
 
@@ -21,11 +21,11 @@ graph TB
 
 # 1. Introduction to Concurrency
 
-## The Problem — Wasted Resources and Frozen UIs
+## The Problem - Wasted Resources and Frozen UIs
 If a program does one thing at a time, and that thing involves waiting (downloading a file, querying a database), the CPU sits completely idle while the user is locked out. A web server handling one request at a time would waste 90% of its CPU capacity waiting on network I/O, meaning it could only handle a tiny fraction of traffic.
 
 ## The Core Idea
-**Concurrency** is the ability of a system to handle multiple tasks during *overlapping time periods*. It doesn't mean doing them at the exact same instant—it means making progress on multiple things by interleaved execution.
+**Concurrency** is the ability of a system to handle multiple tasks during *overlapping time periods*. It doesn't mean doing them at the exact same instant-it means making progress on multiple things by interleaved execution.
 
 ## How It Works
 Concurrency increases throughput by overlapping waiting times (I/O bound) or spreading computation (CPU bound).
@@ -42,7 +42,7 @@ Concurrency increases throughput by overlapping waiting times (I/O bound) or spr
 
 # 2. Concurrency vs Parallelism
 
-## The Problem — Confusing Structure with Hardware
+## The Problem - Confusing Structure with Hardware
 People often use "concurrency" and "parallelism" interchangeably. But if you throw 100 threads at a 4-core machine to do heavy CPU math, you'll actually *slow down* your program due to context switching. If you don't know the difference, you can't optimize effectively.
 
 ## The Core Idea
@@ -64,7 +64,7 @@ You can write a concurrent program that never runs in parallel (single-core). Yo
 
 # 3. Processes vs Threads
 
-## The Problem — Isolation vs. Overhead
+## The Problem - Isolation vs. Overhead
 If you spawn a new process for every web request, your server will quickly run out of memory because processes are heavy. If you put everything in a single process using threads, a single segmentation fault will crash the entire server.
 
 ## The Core Idea
@@ -94,7 +94,7 @@ A **Process** is an isolated instance of a running program (its own house). A **
 
 # 4. Thread Lifecycle and States
 
-## The Problem — Why is my thread stuck?
+## The Problem - Why is my thread stuck?
 When a multi-threaded app freezes, you need to know *why*. Is it actively crunching numbers? Waiting for a network response? Deadlocked waiting for a mutex? If you don't understand the thread lifecycle, you can't debug it.
 
 ## The Core Idea
@@ -130,7 +130,7 @@ stateDiagram-v2
 
 # 5. Race Conditions and Critical Sections
 
-## The Problem — Silent Data Corruption
+## The Problem - Silent Data Corruption
 If Thread A and Thread B both run `counter++` at the same time, the counter might only increment by 1. The program doesn't crash. No exceptions are thrown. Your data is just wrong, and it will be wrong in different, non-deterministic ways every time you run it.
 
 ## The Core Idea

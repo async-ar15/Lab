@@ -10,7 +10,7 @@ This chapter explains the DRY principle through real-world examples, explores th
 
 
 1. What Is the DRY Principle?
-“Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” — The Pragmatic Programmer
+“Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.” - The Pragmatic Programmer
 
 The DRY principle says that each piece of knowledge in your system should live in exactly one place. When you need that knowledge somewhere else, you reference the single source rather than creating a second copy.
 
@@ -145,7 +145,7 @@ The DRY principle is a guideline, not a strict rule. There are situations where 
 1. Avoid Premature Abstractions
 Do not extract shared code too early. Let duplication reveal itself first. Abstractions created too soon can be misleading or hard to maintain.
 
-“Duplication is far cheaper than the wrong abstraction.” — Sandi Metz
+“Duplication is far cheaper than the wrong abstraction.” - Sandi Metz
 
 2. Keep Tests Readable
 Tests need to be easy to read in isolation. If a test fails, the developer reading it should be able to understand the setup, the action, and the expected result without jumping to five different helper methods.

@@ -1,4 +1,4 @@
-# Database Fundamentals — Theory Super
+# Database Fundamentals - Theory Super
 
 ## Global Mind Map: How Database Concepts Connect
 
@@ -52,7 +52,7 @@ graph TB
 
 # 1. ACID Transactions
 
-## The Problem — Preventing Data Corruption on Failures
+## The Problem - Preventing Data Corruption on Failures
 Consider a money transfer between two bank accounts. The transfer looks like one action to the user, but the database has to make at least two changes: subtract money from account A, and add money to account B. If the database subtracts the money and then crashes before adding it, money disappears.
 
 ## What is a Transaction?
@@ -127,7 +127,7 @@ The choice between SQL and NoSQL is about how data is shaped, read, written, and
 
 # 3. Database Indexes
 
-## The Problem — Full Table Scans are Slow
+## The Problem - Full Table Scans are Slow
 If a table has 100 million rows and you query `WHERE email = 'mia@mail.com'` without an index, the database must scan every single row.
 
 ## What is an Index?
@@ -156,7 +156,7 @@ Indexes are not free. They use storage, consume memory cache, and **slow down wr
 
 # 4. Database Sharding
 
-## The Problem — Outgrowing a Single Node
+## The Problem - Outgrowing a Single Node
 When a single database server maxes out its CPU, RAM, or disk space, you must scale. Read replicas help with reads, but if *writes* or *storage* exceed one machine, you must partition the data across multiple machines.
 
 ## What is Sharding?
@@ -183,7 +183,7 @@ The column used to determine which shard receives the data. Choosing this is the
 
 # 5. Data Replication
 
-## The Problem — Single Point of Failure
+## The Problem - Single Point of Failure
 If your database crashes, your app goes offline, and data might be lost.
 
 ## What is Replication?
@@ -216,7 +216,7 @@ Before resorting to Sharding, you should utilize these scaling strategies:
 
 # 7. Bloom Filters
 
-## The Problem — Checking for Missing Data is Expensive
+## The Problem - Checking for Missing Data is Expensive
 Looking up a key on disk or in a remote database is slow. If the key doesn't exist, you wasted that time entirely. You need a fast, memory-efficient way to ask: "Does this item exist?"
 
 ## How a Bloom Filter Works

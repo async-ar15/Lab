@@ -1,4 +1,4 @@
-# Creational Design Patterns — Theory Super
+# Creational Design Patterns - Theory Super
 
 ## Global Mind Map: Creational Patterns
 
@@ -21,7 +21,7 @@ graph TB
 
 # 1. Singleton
 
-## The Problem — Wasteful or Conflicting Instances
+## The Problem - Wasteful or Conflicting Instances
 Sometimes, an application genuinely needs exactly *one* shared instance of a class. Common examples include a configuration manager, a logger, a cache manager, or a thread pool. Creating multiple instances of these objects can waste memory, consume too many network connections, or lead to inconsistent behavior (like two different loggers writing over each other).
 
 ## The Core Idea
@@ -66,7 +66,7 @@ Now the dependency is visible in the constructor, and a test can easily pass a d
 
 # 2. Builder
 
-## The Problem — Telescoping Constructors
+## The Problem - Telescoping Constructors
 Consider a `UserProfile` class. The name and email are required, while fields like age, location, bio, and notification preferences are optional. If you pass everything through the constructor, it looks like this:
 
 ```java
@@ -129,7 +129,7 @@ Internally, each builder method updates one property and returns the same builde
 
 # 3. Factory Method
 
-## The Problem — Tightly Coupled Creation Logic
+## The Problem - Tightly Coupled Creation Logic
 Consider a notification system that supports email, SMS, and push notifications. Creating these objects directly tightly couples your client code to a specific notification class.
 
 ```java
@@ -197,7 +197,7 @@ graph TD
 
 # 4. Abstract Factory
 
-## The Problem — Inconsistent Object Families
+## The Problem - Inconsistent Object Families
 Imagine building a cross-platform desktop application supporting Windows and macOS. You need to create buttons, checkboxes, and menus. If you manually instantiate `new WindowsButton()` and `new MacOSCheckbox()`, nothing stops a developer from mixing them up. You also end up with platform-checking `if (isWindows)` logic scattered everywhere in your code. Adding a third platform (like Linux) forces you to edit hundreds of files.
 
 ## The Core Idea
@@ -286,7 +286,7 @@ app.render();
 
 # 5. Prototype
 
-## The Problem — Expensive or Repetitive Instantiation
+## The Problem - Expensive or Repetitive Instantiation
 Imagine you’re developing a 2D shooting game. You have an `Enemy` class with health, speed, armor, and weapon type. You need to spawn a `FlyingEnemy` hundreds of times. If you instantiate them from scratch, you duplicate the setup logic over and over, scatter defaults across your codebase, and tightly couple your game loop to concrete classes. You also can't easily copy an object if its fields are private (encapsulation blocks you).
 
 ## The Core Idea

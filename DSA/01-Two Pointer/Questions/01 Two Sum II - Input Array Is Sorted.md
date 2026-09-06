@@ -31,7 +31,7 @@ Breaking down the problem before I jump into code:
   - Input: A sorted array and a target int. 
   - Output: A 2-element array containing the 1-based indices.
 - **Important keywords:** "sorted in non-decreasing order" (this is a huge hint!) and "constant extra space".
-- **Basic understanding:** The goal is pretty simple—find two numbers summing to the target. But since the array is 1-indexed and sorted, I just need to return `[index1, index2]`. I can break out of the loop as soon as I find the exact pair.
+- **Basic understanding:** The goal is pretty simple-find two numbers summing to the target. But since the array is 1-indexed and sorted, I just need to return `[index1, index2]`. I can break out of the loop as soon as I find the exact pair.
 
 # Understanding the Constraints
 

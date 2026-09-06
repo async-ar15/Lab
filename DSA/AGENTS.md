@@ -21,7 +21,7 @@ Follow this workflow strictly for every new DSA problem:
 7. **User dry-runs the approach**: Wait for the user to trace through 1 example with actual values step-by-step.
 8. **User writes pseudo-code**: Wait for the user to write pseudo-code. Review it and correct it if they are wrong.
 9. **User writes code**: The user will attempt to write the actual Java code. Even if they say they are a noob, encourage them to try based on their pseudo-code.
-10. **Agent reviews code**: Point out bugs, edge case misses, or logic errors. Do NOT rewrite the whole thing for them—just point out the specific issues and let them fix it.
+10. **Agent reviews code**: Point out bugs, edge case misses, or logic errors. Do NOT rewrite the whole thing for them-just point out the specific issues and let them fix it.
 11. **Agent fills final clean file**: Once the user has successfully solved it, rewrite the entire markdown file to be clean and polished. Include: Understanding, Brute Force, Optimized (with clean Java code), and a specific "Mistakes & Corrections" section tracking the exact errors made during the session.
 12. **Update random learnings**: If new constraint patterns or cross-problem insights were discovered, append them to `c:\Lab\DSA\random learnings.md`. Group by category.
 13. **Git commit**: Agent runs `git add . ; git commit -m "docs: Fully populate <Question Name> solution"` from the `c:\Lab\DSA` directory. The user will do the `git push` manually.
@@ -84,5 +84,5 @@ Pointing out these things:
 
 ## Agent Feedback Rules
 - Always format feedback as `**Agent Feedback:**` blocks directly below the user's `### my understanding` section.
-- Never give the full solution in feedback—guide with hints.
+- Never give the full solution in feedback-guide with hints.
 - Always connect the current problem to previously solved problems when possible (pattern linking).

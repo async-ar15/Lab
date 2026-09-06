@@ -1,5 +1,5 @@
 What is disaster recovery?
-Today, disaster recovery planning is crucial for any business, especially those operating either partially or entirely in the cloud. Disasters that interrupt service and cause data loss can happen anytime without warning—your network could have an outage, a critical bug could get released, or your business might have to weather a natural disaster. Organizations with robust and well-tested disaster recovery strategies can minimize the impact of disruptions, achieve faster recovery times, and resume core operations rapidly when things go awry.
+Today, disaster recovery planning is crucial for any business, especially those operating either partially or entirely in the cloud. Disasters that interrupt service and cause data loss can happen anytime without warning-your network could have an outage, a critical bug could get released, or your business might have to weather a natural disaster. Organizations with robust and well-tested disaster recovery strategies can minimize the impact of disruptions, achieve faster recovery times, and resume core operations rapidly when things go awry.
 
 Learn more about Google Cloud backup and disaster recovery features and products and how they can be used to build the right DR solution for your business.
 
@@ -17,7 +17,7 @@ An IT disaster recovery plan is a portfolio of policies, tools, and processes us
 The first and foremost aspect of a disaster recovery plan is the cloud. The cloud is considered the best solution for both business continuity and disaster recovery. The cloud eliminates the need to run a separate disaster recovery data center (or recovery site).
 
 What is considered an IT disaster?
-DR planning and strategies focus on responding to and recovering from disasters—events that disrupt or completely stop a business from operating.
+DR planning and strategies focus on responding to and recovering from disasters-events that disrupt or completely stop a business from operating.
 
 While these events can be natural disasters like a hurricane, they can also be caused by a severe system failure, an intentional attack, or even human error.
 
@@ -57,13 +57,13 @@ Testing and maintenance
 Regularly test the DR plan to ensure its effectiveness and identify any weaknesses. Update the plan as needed to reflect changes in the IT environment and business requirements.
 
 How disaster recovery works
-Disaster recovery relies on having a solid plan to get critical applications and infrastructure up and running after an outage—ideally within minutes.
+Disaster recovery relies on having a solid plan to get critical applications and infrastructure up and running after an outage-ideally within minutes.
 An effective DR plan addresses three different elements for recovery: 
 
 Preventive: Ensuring your systems are as secure and reliable as possible, using tools and techniques to prevent a disaster from occurring in the first place. This may include backing up critical data or continuously monitoring environments for configuration errors and compliance violations. 
 Detective: For rapid recovery, you’ll need to know when a response is necessary. These measures focus on detecting or discovering unwanted events as they happen in real time. 
 Corrective: These measures are aimed at planning for potential DR scenarios, ensuring backup operations to reduce impact, and putting recovery procedures into action to restore data and systems quickly when the time comes. 
-Typically, disaster recovery involves securely replicating and backing up critical data and workloads to a secondary location or multiple locations—disaster recovery sites. A disaster recovery site can be used to recover data from the most recent backup or a previous point in time. Organizations can also switch to using a DR site if the primary location and its systems fail due to an unforeseen event until the primary one is restored.
+Typically, disaster recovery involves securely replicating and backing up critical data and workloads to a secondary location or multiple locations-disaster recovery sites. A disaster recovery site can be used to recover data from the most recent backup or a previous point in time. Organizations can also switch to using a DR site if the primary location and its systems fail due to an unforeseen event until the primary one is restored.
 
 FAQ
 Learn more about disaster recovery
@@ -78,7 +78,7 @@ What is the difference between backup and disaster recovery?
 Backup is a component of disaster recovery. DR encompasses the broader strategy of restoring IT systems and business operations, while backup focuses specifically on data replication and recovery.
 
 What is a disaster recovery site?
-A disaster recovery site is a second, physical data center that’s costly to build and maintain—and with the cloud, made unnecessary.
+A disaster recovery site is a second, physical data center that’s costly to build and maintain-and with the cloud, made unnecessary.
 
 What is the 3-2-1 rule for backup and disaster recovery?
 The 3-2-1 rule is a best practice for data backup that helps to ensure data durability and availability in the event of a disaster. It states that you should have:

@@ -145,7 +145,7 @@ Click "Run Increment" to start...
 Runs counter++ on both threads
 
 
-No Sync: Both threads may read the same value, increment it, and write back—losing one update. This is a race condition.
+No Sync: Both threads may read the same value, increment it, and write back-losing one update. This is a race condition.
 
 counter++ is actually 3 operations: read → increment → write
 

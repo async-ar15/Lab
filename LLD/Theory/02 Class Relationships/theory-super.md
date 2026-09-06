@@ -1,4 +1,4 @@
-# Class Relationships — Theory Super
+# Class Relationships - Theory Super
 
 ## Global Mind Map: Class Relationships
 
@@ -25,11 +25,11 @@ graph TB
 
 # 1. Association
 
-## The Problem — Isolated Objects
+## The Problem - Isolated Objects
 If objects cannot know about or communicate with other objects, they are useless in a complex system. An order has no meaning without a customer, and a user profile has no meaning without a user.
 
 ## The Core Idea
-**Association** is the most general relationship between classes. It simply means that one class is connected to another—one object *knows about* another object.
+**Association** is the most general relationship between classes. It simply means that one class is connected to another-one object *knows about* another object.
 
 ## How It Works
 Usually, this is implemented by one class storing a reference to another as part of its state.
@@ -69,8 +69,8 @@ Here, the `Order` class stores a reference to a `Customer`. This tells us that e
 
 # 2. Aggregation
 
-## The Problem — Grouping without Owning
-Sometimes, an object needs to group other objects together, but it shouldn't destroy them if it gets destroyed. If a sports team is disbanded, the players don't cease to exist—they just become free agents.
+## The Problem - Grouping without Owning
+Sometimes, an object needs to group other objects together, but it shouldn't destroy them if it gets destroyed. If a sports team is disbanded, the players don't cease to exist-they just become free agents.
 
 ## The Core Idea
 **Aggregation** is a specialized form of Association. It represents a **"has-a"** relationship with **weak ownership**. One object contains or groups other objects, but the contained objects have an *independent lifecycle*.
@@ -107,7 +107,7 @@ If the `EngineeringTeam` is removed from the system, `developer1` and `developer
 
 # 3. Composition
 
-## The Problem — Strict Ownership
+## The Problem - Strict Ownership
 Some objects have no logical meaning without their parent. A line item on a receipt shouldn't exist if the receipt itself is deleted.
 
 ## The Core Idea
@@ -155,14 +155,14 @@ class Order {
 
 # 4. Dependency
 
-## The Problem — Temporary Utilization
+## The Problem - Temporary Utilization
 Sometimes a class doesn't need to "own" or even "associate" with another object permanently as part of its state. It just needs to use a tool to get a job done right now, and then forget about it.
 
 ## The Core Idea
 A **Dependency** exists when one class simply *uses* another class to perform some work. It is generally a weaker relationship than association.
 
 ## How It Works
-With a dependency, the other object usually only appears as a method parameter, local variable, or return type—it is NOT stored as a class-level field.
+With a dependency, the other object usually only appears as a method parameter, local variable, or return type-it is NOT stored as a class-level field.
 
 ```java
 class InvoiceService {

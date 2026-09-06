@@ -127,7 +127,7 @@ Confluent’s managed service will also offer the SQL capabilities of Apache Fli
 
 Together, Kafka and Flink enable a wide range of capabilities to capture events and data from multiple sources, which can then be processed, filtered, and further augmented via powerful and scalable data pipeline and stream processing, to be made available to additional downstream consumers and microservices.
 
-In addition to Kafka and Flink, Confluent offers—as a leader in event streaming platforms—additional capabilities to address the complexities and challenges of implementing the EDA pattern:
+In addition to Kafka and Flink, Confluent offers-as a leader in event streaming platforms-additional capabilities to address the complexities and challenges of implementing the EDA pattern:
 
 Kafka Streams: A lightweight Java library that is tightly integrated with Apache Kafka. With it, developers can build real-time applications and microservices by processing data directly from Kafka topics and producing results back to Kafka. Because it's part of Kafka, Kafka Streams leverages the benefits of Kafka natively.
 Schema Registry: Confluent Schema Registry allows for centralized schema management in event-driven systems. It enables the evolution of schemas over time while ensuring backward compatibility. This helps address event consistency challenges by providing a mechanism for managing the evolution of event formats.

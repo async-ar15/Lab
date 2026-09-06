@@ -28,7 +28,7 @@ Breaking down the problem:
   - Input: An array `arr[]` and an integer `sum`.
   - Output: An integer representing the *count* of valid triplets.
 - **Important keywords:** "count", "triplets", "strictly less than".
-- **Basic understanding:** Again, this is a `3Sum` variant. We are looking for three numbers, so sorting the array and using a `for` loop + Two Pointers is the way to go. The difficult part is the "math"—how do we count efficiently without checking every single combination one by one?
+- **Basic understanding:** Again, this is a `3Sum` variant. We are looking for three numbers, so sorting the array and using a `for` loop + Two Pointers is the way to go. The difficult part is the "math"-how do we count efficiently without checking every single combination one by one?
 
 # Understanding the Constraints
 

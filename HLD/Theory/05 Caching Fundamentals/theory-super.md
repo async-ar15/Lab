@@ -1,4 +1,4 @@
-# Caching Fundamentals — Theory Super
+# Caching Fundamentals - Theory Super
 
 ## Global Mind Map: How Caching Concepts Connect
 
@@ -41,7 +41,7 @@ graph TB
 
 # 1. Caching 101
 
-## The Problem — Hitting the Database is Expensive
+## The Problem - Hitting the Database is Expensive
 Consider a social media feed. Without caching, a single feed load might trigger 50+ database queries (Auth, Profile, Follows, Posts, Like counts, Images). Under heavy traffic, the database becomes a massive bottleneck, slowing down requests and scaling costs exponentially.
 
 ## What is a Cache?
@@ -167,7 +167,7 @@ To route requests, the client hashes the cache key to figure out which node owns
 
 # 5. Content Delivery Network (CDN)
 
-## The Problem — Geography Dictates Speed
+## The Problem - Geography Dictates Speed
 A request from Sydney to a server in Virginia is physically bound by the speed of light. It takes time.
 
 ## What is a CDN?

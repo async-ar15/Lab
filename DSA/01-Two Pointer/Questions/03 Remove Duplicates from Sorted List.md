@@ -61,7 +61,7 @@ WHILE current is not null:
 
 ## Optimized Code (Single Pointer Traversal)
 
-- **Intuition:** Since the list is sorted, duplicates are glued together. I can just stand at a node (`current`), and peek at the *next* node (`current.next`). If they have the exact same value, I completely bypass the next node by linking `current.next` to `current.next.next`! But wait—I can't move my `current` pointer forward just yet, because the *new* next node might ALSO be a duplicate! I only move forward when I'm sure the next node is different.
+- **Intuition:** Since the list is sorted, duplicates are glued together. I can just stand at a node (`current`), and peek at the *next* node (`current.next`). If they have the exact same value, I completely bypass the next node by linking `current.next` to `current.next.next`! But wait-I can't move my `current` pointer forward just yet, because the *new* next node might ALSO be a duplicate! I only move forward when I'm sure the next node is different.
 - **Pseudo code:**
 ```text
 1. IF head is null, RETURN head (edge case!)

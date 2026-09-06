@@ -1,4 +1,4 @@
-# Architectural Patterns — Theory Super
+# Architectural Patterns - Theory Super
 
 ## Global Mind Map: How Architectural Patterns Connect
 
@@ -34,7 +34,7 @@ graph TB
 
 # 1. Client-Server Architecture
 
-## The Problem — Centralizing Trust and Data
+## The Problem - Centralizing Trust and Data
 When many people use an application (like a banking app), your phone cannot be the only place that knows your bank balance. That information must live somewhere central and trusted. If users could execute business logic directly on their devices, they could tamper with their balances.
 
 ## What is Client-Server Architecture?
@@ -56,7 +56,7 @@ A system where one side asks for work (the Client) and the other side does the w
 
 # 2. Microservices Architecture
 
-## The Problem — The Monolith Bottleneck
+## The Problem - The Monolith Bottleneck
 As an application grows, a massive single codebase (Monolith) becomes impossible to maintain. A bug in the "Recommendation" module crashes the "Payments" module. You can't deploy a tiny CSS fix without redeploying the entire gigabyte-sized application. You are forced into a "one-size-fits-all" technology stack.
 
 ## What are Microservices?
@@ -77,7 +77,7 @@ Taking the Single Responsibility Principle and applying it to infrastructure. An
 
 # 3. Serverless Architecture
 
-## The Problem — Paying for Idle Time and Managing Infrastructure
+## The Problem - Paying for Idle Time and Managing Infrastructure
 Running servers means paying for them 24/7, even when no one is using your app at 3 AM. It also means your engineers are wasting time patching Linux, configuring load balancers, and provisioning capacity for Black Friday spikes. 
 
 ## What is Serverless?
@@ -98,7 +98,7 @@ Serverless does not mean there are no servers. It means the cloud provider (AWS,
 
 # 4. Event-Driven Architecture (EDA)
 
-## The Problem — Synchronous Coupling
+## The Problem - Synchronous Coupling
 In a microservices world, if an Order Service directly calls the Payment, Inventory, and Shipping services via HTTP, it creates tight coupling. If the Shipping service goes down, the Order fails. This is slow and brittle.
 
 ## What is Event-Driven Architecture?
@@ -121,7 +121,7 @@ A system where components react to real-time events asynchronously. When a chang
 
 # 5. Peer-to-Peer (P2P) Architecture
 
-## The Problem — Central Server Bottleneck
+## The Problem - Central Server Bottleneck
 In a standard client-server model, if millions of people try to download a file from one server, the server's bandwidth is instantly overwhelmed, and it crashes. The server pays for all the bandwidth.
 
 ## What is Peer-to-Peer?

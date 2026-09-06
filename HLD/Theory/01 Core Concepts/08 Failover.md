@@ -23,7 +23,7 @@ Just as in the active-active cluster, both servers in the active-standby cluster
 
 Clearly, in an active-standby cluster although the standby node is always running, actual utilization approaches zero.
 
-In an active-active cluster, utilization of both nodes nears half and half— although each node can handle the entire load alone. However, this also means that node failure can cause performance to degrade if one active-active configuration node handles more than half of the load consistently.
+In an active-active cluster, utilization of both nodes nears half and half- although each node can handle the entire load alone. However, this also means that node failure can cause performance to degrade if one active-active configuration node handles more than half of the load consistently.
 
 Outage time during a failure is virtually zero with an active-active HA configuration, because both paths are active. With an active-passive configuration, outage time has the potential to be greater, as the system must switch from one node to the other, which requires time.
 
@@ -101,7 +101,7 @@ Failover testing validates a system’s capacity during a server failure to allo
 
 The test will determine whether the system has the capacity in the event of any kind of abnormal termination or failure to handle necessary extra resources and move operations to backup systems. 
 
-For instance, failover and recovery testing determines the ability of the system to manage and power an additional CPU or multiple servers once it achieves a threshold for performance — one often breached during critical failures. This highlights the important relationship between failover testing, cyber resilience, and security.
+For instance, failover and recovery testing determines the ability of the system to manage and power an additional CPU or multiple servers once it achieves a threshold for performance - one often breached during critical failures. This highlights the important relationship between failover testing, cyber resilience, and security.
 
  
 

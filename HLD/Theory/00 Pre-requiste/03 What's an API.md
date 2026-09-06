@@ -6,7 +6,7 @@ At its core, an API is a bunch of code that takes an input and gives you predict
 
 Think of an API as a middleman that enables applications to interact without needing direct access to each other's code or database.
 
-Almost every digital service you use today—social media, e-commerce, online banking, ride-hailing apps—all of them are a bunch of APIs working together.
+Almost every digital service you use today-social media, e-commerce, online banking, ride-hailing apps-all of them are a bunch of APIs working together.
 
 ### Examples:
 - **Weather API** – If you provide a city name as input ("New York"), the API returns the current temperature, humidity, and weather conditions.
@@ -72,7 +72,7 @@ Unlock Full Access
 ---
 
 ## 1. How APIs Power Modern Applications
-The apps you use every day—whether it's Gmail, Instagram, Uber, or Spotify—are essentially a collection of APIs with a polished user interface (UI) on top.
+The apps you use every day-whether it's Gmail, Instagram, Uber, or Spotify-are essentially a collection of APIs with a polished user interface (UI) on top.
 
 Most applications follow the frontend/backend architecture, where:
 - **The backend** consists of APIs that handle data processing, business logic, and communication with databases.
@@ -102,7 +102,7 @@ These APIs run on Uber’s servers, forming the backend infrastructure. Every ti
 Backend engineers are responsible for optimizing these APIs, improving ride-matching algorithms, securing transactions, and ensuring a smooth experience for millions of users.
 
 ### The Frontend
-The backend APIs handle all the complex logic, but they only work through code—which isn't practical for everyday users. That’s why companies build a frontend (user interface) on top of these APIs, allowing users to interact with the system visually and intuitively.
+The backend APIs handle all the complex logic, but they only work through code-which isn't practical for everyday users. That’s why companies build a frontend (user interface) on top of these APIs, allowing users to interact with the system visually and intuitively.
 
 **Example:** When you enter your pickup & destination address, the frontend sends an API request to find nearby drivers and displays available cars.
 
@@ -137,7 +137,7 @@ Each of these APIs operates independently, but they communicate through well-def
 Internal APIs allow companies to break down their applications into smaller, manageable services, making it easier to scale. Developers can reuse internal APIs across different projects, reducing duplication and speeding up development.
 
 ### 3. Code Interfaces
-The first two types of APIs we discussed—Open APIs and Internal APIs—are functional and serve real-world use cases like fetching weather data or booking a ride.
+The first two types of APIs we discussed-Open APIs and Internal APIs-are functional and serve real-world use cases like fetching weather data or booking a ride.
 
 But there’s another category of APIs that developers use daily: Code Interfaces (also called Library APIs or Programming APIs).
 

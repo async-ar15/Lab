@@ -1,4 +1,4 @@
-# UML (Unified Modeling Language) — Theory Super
+# UML (Unified Modeling Language) - Theory Super
 
 ## Global Mind Map: UML Diagrams
 
@@ -25,7 +25,7 @@ graph TB
 
 # 1. Class Diagram
 
-## The Problem — Invisible Architecture
+## The Problem - Invisible Architecture
 When looking at raw code, you can't easily see the big picture. How does an `Order` relate to a `LineItem`? Does a `Teacher` own a `Student` or just reference them? Without a visual map, onboarding new developers or reasoning about architectural changes requires reading thousands of lines of code.
 
 ## The Core Idea
@@ -65,7 +65,7 @@ A class is drawn as a rectangle divided into three compartments:
 
 # 2. Use Case Diagram
 
-## The Problem — Missing the Forest for the Trees
+## The Problem - Missing the Forest for the Trees
 Before writing code or database schemas, developers often get bogged down in implementation details. If you don't know exactly *who* uses the system and *what* their goals are, you build features nobody needs or miss critical external interactions (like a payment gateway).
 
 ## The Core Idea
@@ -89,7 +89,7 @@ A **Use Case Diagram** models the system from the user’s perspective. It defin
 
 # 3. Sequence Diagram
 
-## The Problem — "Spaghetti" Control Flow
+## The Problem - "Spaghetti" Control Flow
 In a microservices or heavily layered architecture, a single user click triggers a cascade of method calls across controllers, services, and databases. Finding out exactly *what order* things happen in, and who waits for what, is nearly impossible by just reading static class definitions.
 
 ## The Core Idea
@@ -121,7 +121,7 @@ Real interactions have logic. Fragments wrap sections of the diagram:
 
 # 4. Activity Diagram
 
-## The Problem — Verbally Tangled Workflows
+## The Problem - Verbally Tangled Workflows
 Describing a complex business process verbally ("If X happens, do Y, unless Z, in which case do A and B in parallel until C...") is a recipe for disaster. Edge cases get missed, and bottlenecks are invisible.
 
 ## The Core Idea
@@ -146,7 +146,7 @@ Swimlanes visually divide the diagram by actor/component (e.g., Customer, System
 
 # 5. State Machine Diagram
 
-## The Problem — Lifecycle Bugs
+## The Problem - Lifecycle Bugs
 Some objects (like a Vending Machine, an Order, or an Elevator) are defined by their state. If you can cancel a "Delivered" order, or insert money while an ATM is "Dispensing", you have a critical bug. Activity diagrams model *steps*, but they don't cleanly model *lifecycles and allowed operations*.
 
 ## The Core Idea

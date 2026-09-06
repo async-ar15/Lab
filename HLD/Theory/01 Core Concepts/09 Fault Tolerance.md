@@ -11,7 +11,7 @@ Outages like that are one of the reasons why fault tolerance is an integral part
 What is fault tolerance?Copy Icon
 Fault tolerance describes a system’s ability to handle errors and outages without any loss of functionality. It is a critical capability, especially in cloud computing, where reliability and uptime are paramount.
 
-For example, here’s a simple demonstration of comparative fault tolerance in the database layer. In the diagram below, Application 1 is connected to a single database instance. Application 2 is connected to two database instances — the primary database and a standby replica.
+For example, here’s a simple demonstration of comparative fault tolerance in the database layer. In the diagram below, Application 1 is connected to a single database instance. Application 2 is connected to two database instances - the primary database and a standby replica.
 
 fault-tolerance-comparative-application-architecture-illustration
 In this scenario, Application 2 is more fault tolerant. If its primary database goes offline, it can switch over to the standby replica and continue operating as usual.
@@ -43,7 +43,7 @@ Fault tolerance goalsCopy Icon
 Building fault-tolerant systems is more complex and generally also more expensive. If we think back to our simple example from earlier, Application 2 is more fault tolerant, but it also has to pay for and maintain an additional database server. Thus, it’s important to assess the level of fault tolerance your application requires and build your system accordingly.
 
 Normal functioning vs. graceful degradationCopy Icon
-When designing fault-tolerant systems, you may want the application to remain online and fully functional at all times. In this case, your goal is normal functioning — you want your application, and by extension the user’s experience, to remain unchanged even if an element of your system fails or is knocked offline.
+When designing fault-tolerant systems, you may want the application to remain online and fully functional at all times. In this case, your goal is normal functioning - you want your application, and by extension the user’s experience, to remain unchanged even if an element of your system fails or is knocked offline.
 
 Another approach is aiming for what’s called graceful degradation, where outages and errors are allowed to impact functionality and degrade the user experience, but not knock the application out entirely. For example, if a software instance encounters an error during a period of heavy traffic, the application experience may slow for other users, and certain features might become unavailable.
 
@@ -104,14 +104,14 @@ This application could survive a node, AZ, or even region failure affecting its 
 Achieving fault tolerance in the application layerCopy Icon
 In the diagram above, the application is spread across multiple regions, with each region having its own Kubernetes cluster.
 
-Within each region, the application is built with microservices that execute specific tasks, and these microservices are typically operated inside Kubernetes pods. This allows for much greater fault tolerance, since a new pod with a new instance can be started up whenever an existing pod encounters an error. This approach also makes the application easier to scale horizontally — as the load on a specific service increases, additional instances of that service can be added in real time to handle the load, and then removed when the load dies down again and they’re no longer needed.
+Within each region, the application is built with microservices that execute specific tasks, and these microservices are typically operated inside Kubernetes pods. This allows for much greater fault tolerance, since a new pod with a new instance can be started up whenever an existing pod encounters an error. This approach also makes the application easier to scale horizontally - as the load on a specific service increases, additional instances of that service can be added in real time to handle the load, and then removed when the load dies down again and they’re no longer needed.
 
 Message queuing and solving the dual-write problem in microservice architectures.
 
 Achieving fault tolerance in the persistence (database) layerCopy Icon
 The application in the diagram above takes a similar approach in the database layer. Here, CockroachDB is chosen because its distributed, node-based nature naturally provides a high level of fault tolerance and the same flexibility when it comes to scaling up and down horizontally. Being a distributed SQL database, it also allows for strong consistency guarantees, which is important for most transactional workloads.
 
-CockroachDB also makes sense for this architecture because although it’s a distributed database, it can be treated like a single-instance Postgres database by the application — almost all the complexity of distributing the data to meet your application’s availability and survival goals happens under the hood.
+CockroachDB also makes sense for this architecture because although it’s a distributed database, it can be treated like a single-instance Postgres database by the application - almost all the complexity of distributing the data to meet your application’s availability and survival goals happens under the hood.
 
 Further readingCopy Icon
 Building fault-tolerant applications while improving operational efficiency

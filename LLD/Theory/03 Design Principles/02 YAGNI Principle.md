@@ -14,7 +14,7 @@ Let’s unpack what YAGNI really means, why it’s often ignored, and how follow
 
 
 1. What Is the YAGNI Principle?
-“Always implement things when you actually need them, never when you just foresee that you need them.” — Ron Jeffries, co-founder of Extreme Programming
+“Always implement things when you actually need them, never when you just foresee that you need them.” - Ron Jeffries, co-founder of Extreme Programming
 
 YAGNI is a principle that encourages you to resist the temptation to build features or add flexibility until you are absolutely sure you need them.
 

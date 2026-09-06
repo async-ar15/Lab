@@ -1,4 +1,4 @@
-# Design Principles — Theory Super
+# Design Principles - Theory Super
 
 ## Global Mind Map: Design Principles
 
@@ -24,7 +24,7 @@ graph TB
 
 # 1. The DRY Principle (Don't Repeat Yourself)
 
-## The Problem — Scattered Knowledge
+## The Problem - Scattered Knowledge
 If you copy the exact same validation logic, configuration string, or database query into five different files, what happens when the business rule changes? You have to find and update all five places. If you miss even one, the system becomes inconsistent, leading to severe, hard-to-trace bugs.
 
 ## The Core Idea
@@ -32,7 +32,7 @@ If you copy the exact same validation logic, configuration string, or database q
 When you need that knowledge somewhere else, you reference the single source rather than creating a second copy.
 
 ## How It Works
-DRY is not just about code lines—it applies to business rules, configs, data models, and tests.
+DRY is not just about code lines-it applies to business rules, configs, data models, and tests.
 
 **Before (Violating DRY):**
 ```java
@@ -66,13 +66,13 @@ if (EmailValidator.isValid(customer.getEmail())) { ... }
 ## The Rule of Three (When NOT to apply DRY)
 Don't extract shared code too early. Wait until you see the exact same pattern **three times**. Two occurrences might be a coincidence that will soon diverge. Premature abstractions create tight coupling for things that aren't genuinely the same. 
 
-*“Duplication is far cheaper than the wrong abstraction.” — Sandi Metz*
+*“Duplication is far cheaper than the wrong abstraction.” - Sandi Metz*
 
 ---
 
 # 2. The YAGNI Principle (You Aren't Gonna Need It)
 
-## The Problem — Speculative Engineering
+## The Problem - Speculative Engineering
 Developers often try to predict the future: *"What if we need cloud storage later? What if we need a plugin system?"* We build massive interfaces, factories, and abstractions for features that do not exist yet. This wastes time, clutters the codebase with dead code, and delays shipping actual value.
 
 ## The Core Idea
@@ -106,7 +106,7 @@ You must plan ahead for **known, concrete constraints**, not imagined ones.
 
 # 3. The KISS Principle (Keep It Simple, Stupid)
 
-## The Problem — The Complexity Cycle
+## The Problem - The Complexity Cycle
 Complexity creeps in gradually. A bug gets patched with a clever workaround instead of a proper fix, adding indirection. Soon, fixing a bug requires tracing through 5 layers of factories and interfaces. Complex code hides bugs, slows down onboarding, and turns debugging into a nightmare.
 
 ## The Core Idea
@@ -150,7 +150,7 @@ class Calculator {
 
 SOLID is an acronym for five design principles intended to make software designs more understandable, flexible, and maintainable.
 
-## S — Single Responsibility Principle (SRP)
+## S - Single Responsibility Principle (SRP)
 **The Core Idea:** A class should have one, and only one, reason to change. (A class should have a single responsibility).
 
 **The Problem:** If a `UserManager` class handles authentication, profile updating, *and* sending email notifications, a change to the email server might accidentally break authentication.
@@ -171,7 +171,7 @@ class UserProfileManager { void update() { ... } }
 class EmailNotifier { void send() { ... } }
 ```
 
-## O — Open/Closed Principle (OCP)
+## O - Open/Closed Principle (OCP)
 **The Core Idea:** Software entities (classes, modules, functions) should be **open for extension, but closed for modification**.
 
 **The Problem:** If you have to modify an existing, tested class every time a new feature is added, you risk introducing bugs into systems that currently work perfectly.
@@ -200,7 +200,7 @@ class ShapeCalculator {
 }
 ```
 
-## L — Liskov Substitution Principle (LSP)
+## L - Liskov Substitution Principle (LSP)
 **The Core Idea:** Objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program.
 
 **The Problem:** When a child class cannot perform the same actions as its parent class (e.g. throwing an `UnsupportedOperationException` for a parent method), the program will crash if someone treats the child as the parent.
@@ -221,7 +221,7 @@ class Car extends Vehicle { void move() { startEngine(); } }
 class Bicycle extends Vehicle { void move() { pedal(); } }
 ```
 
-## I — Interface Segregation Principle (ISP)
+## I - Interface Segregation Principle (ISP)
 **The Core Idea:** Clients should not be forced to depend on interfaces they do not use.
 
 **The Problem:** "Fat" or "bloated" interfaces force classes to implement methods that are completely irrelevant to them, creating wasteful, confusing code.
@@ -248,7 +248,7 @@ class MP3Player implements AudioPlayer {
 }
 ```
 
-## D — Dependency Inversion Principle (DIP)
+## D - Dependency Inversion Principle (DIP)
 **The Core Idea:** 
 1. High-level modules should not depend on low-level modules. Both should depend on abstractions (interfaces).
 2. Abstractions should not depend on details. Details should depend on abstractions.

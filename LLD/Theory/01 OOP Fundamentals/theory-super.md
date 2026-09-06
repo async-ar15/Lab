@@ -1,4 +1,4 @@
-# OOP Fundamentals — Theory Super
+# OOP Fundamentals - Theory Super
 
 ## Global Mind Map: OOP Fundamentals
 
@@ -32,7 +32,7 @@ graph TB
 
 # 1. Classes and Objects
 
-## The Problem — Unorganized State and Behavior
+## The Problem - Unorganized State and Behavior
 Before Object-Oriented Programming (OOP), code was often a scattered collection of variables and functions. Keeping track of which data belonged to which function was difficult and error-prone, especially as programs grew larger.
 
 ## The Core Idea
@@ -101,7 +101,7 @@ class User {
 
 # 2. Enums
 
-## The Problem — Invalid Values
+## The Problem - Invalid Values
 Sometimes a field should only accept a small, strict set of predefined values (e.g., an order status). If you use a `String`, typos can easily occur (`"shiped"` instead of `"shipped"`), and the compiler won't catch them.
 
 ## The Core Idea
@@ -118,13 +118,13 @@ status = OrderStatus.SHIPPED; // only valid values are allowed
 ```
 
 ## Real-World Anchoring
-Any time you have a fixed set of options—`OrderStatus` in e-commerce, `PaymentStatus` (SUCCESS, FAILED), `UserRole` (ADMIN, USER), or `DifficultyLevel` (EASY, MEDIUM, HARD)—enums are the right choice.
+Any time you have a fixed set of options-`OrderStatus` in e-commerce, `PaymentStatus` (SUCCESS, FAILED), `UserRole` (ADMIN, USER), or `DifficultyLevel` (EASY, MEDIUM, HARD)-enums are the right choice.
 
 ---
 
 # 3. Access Modifiers
 
-## The Problem — Unrestricted Access
+## The Problem - Unrestricted Access
 If all data inside a class is visible to the entire application, any part of the code can modify it unexpectedly. This leads to fragile systems where a change in one place breaks things elsewhere.
 
 ## The Core Idea
@@ -168,7 +168,7 @@ class UserAccount {
 
 # 4. Interfaces
 
-## The Problem — Rigid Dependencies
+## The Problem - Rigid Dependencies
 If a class depends directly on a specific implementation (e.g., `LocalDiskStorage`), changing to a different implementation (e.g., `CloudStorage`) requires rewriting the code.
 
 ## The Core Idea
@@ -215,7 +215,7 @@ class BackupService {
 
 # 5. Abstract Classes
 
-## The Problem — Shared Code in Contracts
+## The Problem - Shared Code in Contracts
 Interfaces are great for contracts, but what if multiple classes implementing that contract share the exact same helper logic or state? Duplicating that code across all implementations violates the DRY (Don't Repeat Yourself) principle.
 
 ## The Core Idea
@@ -262,7 +262,7 @@ Here, `generate` and `save` are shared by all report generators. Only the specif
 
 # 6. Encapsulation (Pillar 1)
 
-## The Problem — Invalid Object States
+## The Problem - Invalid Object States
 If internal data is exposed (e.g., `public double balance;`), anyone can change it arbitrarily, bypassing business rules. An admin tool might accidentally set a bank balance to negative, corrupting the system.
 
 ## The Core Idea
@@ -300,7 +300,7 @@ Now, the balance can *only* be modified through `deposit` and `withdraw`, where 
 
 # 7. Abstraction (Pillar 2)
 
-## The Problem — Cognitive Overload
+## The Problem - Cognitive Overload
 If a developer has to understand networking, buffering, codecs, and frame decoding just to play a video file, the system is too complex to use efficiently.
 
 ## The Core Idea
@@ -339,7 +339,7 @@ The caller knows *what* the method does, but doesn't need to know *how*.
 
 # 8. Inheritance (Pillar 3)
 
-## The Problem — Redundant Object Definitions
+## The Problem - Redundant Object Definitions
 If you have `EmailNotification` and `SmsNotification` classes, they likely share fields like `recipient` and methods like `log()`. Rewriting these in every new notification class wastes time and creates maintenance nightmares.
 
 ## The Core Idea
@@ -403,7 +403,7 @@ class OrderService {
 
 # 9. Polymorphism (Pillar 4)
 
-## The Problem — Rigid Typing
+## The Problem - Rigid Typing
 If you want to process a list of 100 different notifications (some emails, some SMS), without polymorphism, you would need complex `if/else` statements to check the type of each object before calling its specific send method.
 
 ## The Core Idea

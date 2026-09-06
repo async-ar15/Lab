@@ -1,4 +1,4 @@
-# System Design Tradeoffs — Theory Super
+# System Design Tradeoffs - Theory Super
 
 ## Global Mind Map: System Design Tradeoffs
 
@@ -43,7 +43,7 @@ graph TB
 
 # 2. Vertical vs. Horizontal Scaling
 
-## The Problem — Hitting a Bottleneck
+## The Problem - Hitting a Bottleneck
 Scaling starts with a bottleneck: CPU, memory, disk I/O, network bandwidth, or a shared dependency. Once you identify the limit, you must add capacity.
 
 ## Vertical Scaling (Scaling Up)
@@ -66,7 +66,7 @@ Adding *more* nodes (machines, containers, pods) and spreading work across them 
 
 # 3. Concurrency vs. Parallelism
 
-## The Problem — Maximizing Processing Power
+## The Problem - Maximizing Processing Power
 You have multiple tasks to perform, and you want to finish them as efficiently as possible using the CPU.
 
 ## Concurrency (Managing multiple things at once)
@@ -85,7 +85,7 @@ Parallelism means multiple tasks are executing simultaneously at the exact same 
 
 # 4. Long Polling vs. WebSockets
 
-## The Problem — Real-Time Updates
+## The Problem - Real-Time Updates
 Traditional HTTP is "Client asks, server answers." The server cannot push data to the client proactively. Regular polling (asking every 1 second) wastes massive amounts of bandwidth if there's no new data.
 
 ## Long Polling
@@ -140,7 +140,7 @@ The server retains absolutely no memory of previous interactions. Each request c
 
 # 7. Strong vs. Eventual Consistency (CAP Theorem)
 
-## The Problem — Distributed Data
+## The Problem - Distributed Data
 In a distributed system, data is replicated across multiple nodes. When a write happens to Node A, it takes time to copy that write to Node B. What happens if a user reads from Node B during that delay?
 
 ## CAP Theorem
@@ -239,6 +239,6 @@ Non-blocking operation. The sender fires a message and immediately moves on.
 - **Throughput:** The *volume* of data that successfully passes through the network over a specific time (measured in MBps or GBps). Influenced by bandwidth limits and packet loss.
 
 **The Relationship:** 
-You can have high throughput but terrible latency (shipping a hard drive full of data across the country via FedEx — huge throughput, multi-day latency).
+You can have high throughput but terrible latency (shipping a hard drive full of data across the country via FedEx - huge throughput, multi-day latency).
 - **To improve Latency:** Use CDNs to move data geographically closer to users.
 - **To improve Throughput:** Increase bandwidth, optimize protocols (UDP vs TCP), use Quality of Service (QoS).

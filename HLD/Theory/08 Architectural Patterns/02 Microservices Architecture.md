@@ -16,7 +16,7 @@ Another advantage which a microservices architecture brings to the table is maki
 How Do I Get Started with a Microservices Architecture?
 Hopefully, you’re now convinced that a microservices architecture can offer some unique advantages over traditional architectures and you’ve started thinking about this type of approach for your next project.
 
-The very next question that comes to mind is “How do I start?” — and — “Is there a standard set of principles which I can follow to help me build a microservices architecture in a better way?”
+The very next question that comes to mind is “How do I start?” - and - “Is there a standard set of principles which I can follow to help me build a microservices architecture in a better way?”
 
 Well, I’m afraid the answer is “No”.
 
@@ -60,7 +60,7 @@ The diagram below shows one of the common mistakes in designing microservices:
 
 As you can see in the diagram, here we are taking a service (Service 1) and storing all of the information needed by the service to a database. When another service (Service 2) is created which needs that same data, we access that data directly from the database.
 
-This approach might seem reasonable and logical in certain instances — maybe it’s easy to access data in a SQL database or write data to a SQL database or maybe the APIs needed by Service 2 are not readily available.
+This approach might seem reasonable and logical in certain instances - maybe it’s easy to access data in a SQL database or write data to a SQL database or maybe the APIs needed by Service 2 are not readily available.
 
 As soon as this approach is adopted, control is immediately lost in determining what is hidden and what is not. Later on, if the schema needs to change, the flexibility to make that change is lost, since you won’t know who is using the database and whether the change will break Service 2 or not.
 
@@ -128,7 +128,7 @@ For this reason, an alternative approach can be considered in which another end 
 The distinct advantage to this approach is that it’s easier to maintain the service as there will always be only one version of the API running.
 
 6. Making Standards
-When there are multiple teams taking care of different services independently, it’s best to introduce some standards and best practices — error handling, for example. As might be expected, standards and best practices are not provided, each service would likely handle errors differently, and no doubt a significant amount of unnecessary code would be written.
+When there are multiple teams taking care of different services independently, it’s best to introduce some standards and best practices - error handling, for example. As might be expected, standards and best practices are not provided, each service would likely handle errors differently, and no doubt a significant amount of unnecessary code would be written.
 
 Creating standards such as PayPal’s API Style Guide is always helpful in long run. It’s also important to let others know what an API does and documentation of the API should always be done when creating it. There are tools like Swagger which are very helpful in assisting in development across the entire API lifecycle, from design and documentation, to test and deployment. An ability to create metadata for your API and let users play with it, allows them to know more about it and use it more effectively.
 
@@ -154,7 +154,7 @@ The Circuit Breaker pattern wraps a protected function call in a circuit breaker
 
 After the timeout expires some calls are allowed by circuit breaker to pass through, and if they succeed the circuit breaker resumes a normal state. For the period the circuit breaker has failed, users can be notified that a certain part of system is broken and the rest of the system can still be used.
 
-Be aware that providing the required level of resiliency for an application can be a multi-dimensional challenge — take a look at Bilgin Ibryam’s post for some great detail “It takes more than a Circuit Breaker to create a resilient application”.
+Be aware that providing the required level of resiliency for an application can be a multi-dimensional challenge - take a look at Bilgin Ibryam’s post for some great detail “It takes more than a Circuit Breaker to create a resilient application”.
 
 8. Monitoring and Logging
 Microservices are distributed by nature and monitoring and logging of individual services can be a challenge. It’s difficult to go through and correlate logs of each service instance and figure out individual errors. Just as with monolithic applications, there is no single place to monitor microservices.
@@ -167,14 +167,14 @@ Standard tools are available and widely used by various enterprises. ELK Stack i
 Stats Aggregation
 Similar to log aggregation, stats aggregation such as CPU and memory usage can also be leveraged and stored centrally. Tools such as Graphite do a nice job in pushing to a central repository and storing in an efficient way.
 
-When one of the downstream services is incapable of handling requests, there should be a way to trigger an alert, and that’s where implementing health check APIs in each service become important — they return information on the health of the system.
+When one of the downstream services is incapable of handling requests, there should be a way to trigger an alert, and that’s where implementing health check APIs in each service become important - they return information on the health of the system.
 
 A health check client, which could be a monitoring service or a load balancer, invokes the endpoint to check the health of the service instance periodically in a certain time interval. Even if all of the downstream services are healthy, there could still be a downstream communication problem between services. Tools such as Netflix’s Hystrix project enable an ability to identify those types of problems.
 
 One Last Thing
 Now that we have covered what a microservices architecture is, why you’d want to deploy a microservices architecture, and thoughts on getting started, I’d like to offer up a final piece of advice:
 
-— Start Small —
+- Start Small -
 
 When you are just starting to develop microservices, start modestly with just one or two services, learn from them, and with time and experience add more.
 

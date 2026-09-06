@@ -148,7 +148,7 @@ Implement the abstract product interfaces.
 Contain platform-specific logic and appearance for the components.
 5. Client (Application)
 Uses the abstract factory and abstract product interfaces.
-Is completely unaware of the concrete classes it is using — it only interacts with the factory and product interfaces.
+Is completely unaware of the concrete classes it is using - it only interacts with the factory and product interfaces.
 Can switch entire product families (e.g., from Windows to macOS) by changing the factory without touching UI logic.
 
 3. How It Works

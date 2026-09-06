@@ -1,4 +1,4 @@
-# API Fundamentals — Theory Super
+# API Fundamentals - Theory Super
 
 ## Global Mind Map: How API Concepts Connect
 
@@ -43,7 +43,7 @@ graph TB
 
 # 1. APIs: Contracts and Boundaries
 
-## The Problem — Systems Need a Safe Way to Talk
+## The Problem - Systems Need a Safe Way to Talk
 Software is usually made of many smaller pieces. Those pieces need a safe, predictable way to talk to each other. You cannot have one service walking directly into another's database, inspecting its source code, or reaching into its internal memory. 
 
 ## What an API Is

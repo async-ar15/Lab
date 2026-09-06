@@ -6,7 +6,7 @@ Updated July 6, 2026
 Listen to this chapter
 Unlock Audio
 
-Imagine you’ve been asked to design a new software system—say, an online food delivery app. Before you dive into writing classes, functions, or database schemas, the first question is:
+Imagine you’ve been asked to design a new software system-say, an online food delivery app. Before you dive into writing classes, functions, or database schemas, the first question is:
 
 "What exactly should this system do?"
 

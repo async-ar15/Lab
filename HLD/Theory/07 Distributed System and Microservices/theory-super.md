@@ -1,4 +1,4 @@
-# Distributed System and Microservices — Theory Super
+# Distributed System and Microservices - Theory Super
 
 ## Global Mind Map: How Distributed System Concepts Connect
 
@@ -37,7 +37,7 @@ graph TB
 
 # 1. Heartbeats
 
-## The Problem — How do we know if a node is dead?
+## The Problem - How do we know if a node is dead?
 In a distributed system, things fail constantly. Hardware malfunctions, software crashes, or network connections drop. If a node fails, the load balancer or coordinator needs to know immediately so it can stop routing traffic to the dead node and spin up a replacement. 
 
 ## What is a Heartbeat?
@@ -65,7 +65,7 @@ A heartbeat is a periodic message sent from one component to another to monitor 
 
 # 2. Service Discovery
 
-## The Problem — Finding Services in a Dynamic World
+## The Problem - Finding Services in a Dynamic World
 In modern architectures, you might have hundreds of microservices. They are deployed on containers, scaled up and down dynamically, and given random IP addresses. Hardcoding IP addresses is impossible. When Service A needs to call Service B, how does it know Service B's current IP address?
 
 ## What is Service Discovery?
@@ -92,7 +92,7 @@ The Client sends the request to a central Load Balancer / API Gateway. The Gatew
 
 # 3. Consensus Algorithms
 
-## The Problem — Agreeing in the Face of Failure and Treachery
+## The Problem - Agreeing in the Face of Failure and Treachery
 In a distributed system, multiple nodes must agree on a common value (e.g., Who is the leader? Was this transaction committed?). This is complicated by the fact that nodes can crash, network packets can be lost, and in some cases, nodes might be malicious.
 
 ## Crash Failure vs Byzantine Failure
@@ -119,7 +119,7 @@ Based on the Byzantine Generals Problem. Leslie Lamport proved: *If more than 2/
 
 # 4. Distributed Locking
 
-## The Problem — Protecting Shared Resources
+## The Problem - Protecting Shared Resources
 If two servers try to write to the same file in S3 at the exact same time, the file will be corrupted or an update will be lost. You need a lock. But a local mutex doesn't work across multiple servers. You need a distributed lock.
 
 ### Efficiency vs Correctness
@@ -147,7 +147,7 @@ To make a lock safe for *correctness*, the lock server must generate a strictly 
 
 # 5. Gossip Protocol
 
-## The Problem — Spreading Information at Massive Scale
+## The Problem - Spreading Information at Massive Scale
 How do 25,000 nodes in a cluster (like Cassandra) know the state of every other node without a central server? A central server (like ZooKeeper) would become a massive bottleneck and single point of failure.
 
 ## What is Gossip Protocol?
@@ -171,7 +171,7 @@ Also known as the epidemic protocol. Every node periodically selects a few rando
 
 # 6. Circuit Breaker
 
-## The Problem — Cascading Failures
+## The Problem - Cascading Failures
 Service A calls Service B. Service B is completely overwhelmed and takes 30 seconds to respond. 
 Because A is waiting on B, all of A's threads get blocked. Now A cannot process any requests. Because A is down, the API Gateway goes down. The entire system crashes because one tiny downstream service was slow.
 
@@ -190,7 +190,7 @@ From the user's perspective, it is better to instantly see an error message ("Se
 
 # 7. Disaster Recovery (DR)
 
-## The Problem — When the Worst Happens
+## The Problem - When the Worst Happens
 Ransomware, earthquakes, datacenter fires, or an intern dropping a production table. You must be able to restore the system.
 
 ## DR vs Backup
@@ -211,7 +211,7 @@ Ransomware, earthquakes, datacenter fires, or an intern dropping a production ta
 
 # 8. Distributed Tracing
 
-## The Problem — Debugging a Microservice Maze
+## The Problem - Debugging a Microservice Maze
 A user clicks "Checkout". The request passes through an API Gateway, an Auth Service, an Inventory Service, a Pricing Service, and a Payment Service. The request took 5 seconds. *Which service was slow?*
 Centralized logging doesn't help because you have 5 different log files with no way to connect the dots.
 

@@ -1,4 +1,4 @@
-# Synchronization Primitives — Theory Super
+# Synchronization Primitives - Theory Super
 
 ## Global Mind Map: Synchronization Primitives
 
@@ -33,7 +33,7 @@ graph TB
 
 # 1. Mutex (Mutual Exclusion)
 
-## The Problem — Lost Updates
+## The Problem - Lost Updates
 If two threads both run `counter++`, they can simultaneously read `0`, calculate `1`, and write `1`. The second update is lost because the threads overwrote each other without knowing.
 
 ## The Core Idea
@@ -52,7 +52,7 @@ A **Mutex** is the most fundamental synchronization primitive. It ensures that o
 
 # 2. Semaphores
 
-## The Problem — Resource Pools
+## The Problem - Resource Pools
 A mutex only allows *one* thread. What if you have a database connection pool of 20 connections? You want to allow up to 20 threads to work concurrently, and block the 21st. A mutex can't do this.
 
 ## The Core Idea
@@ -72,7 +72,7 @@ A **Semaphore** maintains a counter of available "permits". It answers the quest
 
 # 3. Condition Variables
 
-## The Problem — Busy Waiting
+## The Problem - Busy Waiting
 If a consumer thread needs to wait for data, it could write `while(!dataReady) {}`. This burns 100% of a CPU core doing absolutely nothing (busy-waiting).
 
 ## The Core Idea
@@ -93,7 +93,7 @@ A Condition Variable **must always be paired with a Mutex** to prevent the "Lost
 
 # 4. Lock Granularity (Coarse vs Fine-Grained)
 
-## The Problem — The Contention Bottleneck
+## The Problem - The Contention Bottleneck
 If you protect a massive Hash Table with a single global mutex, thread A writing to bucket 0 blocks thread B writing to bucket 999. Parallelism is destroyed.
 
 ## The Core Idea
@@ -108,7 +108,7 @@ If you protect a massive Hash Table with a single global mutex, thread A writing
 
 # 5. Reentrant Locks (Recursive Locks)
 
-## The Problem — Self-Deadlock
+## The Problem - Self-Deadlock
 If a thread holds a lock, and calls a function (or recurses) that tries to acquire that *exact same lock*, a normal mutex will block forever. The thread is waiting for itself.
 
 ## The Core Idea
@@ -126,7 +126,7 @@ A **Reentrant Lock** tracks *which* thread owns it and *how many times* they acq
 
 # 6. Try-Lock and Timed Locking
 
-## The Problem — Indefinite Deadlocks
+## The Problem - Indefinite Deadlocks
 If Thread A holds Lock 1 and waits for Lock 2, while Thread B holds Lock 2 and waits for Lock 1, they wait forever. Standard locks offer no escape hatch.
 
 ## The Core Idea
@@ -142,7 +142,7 @@ If it returns `false`, the thread can release any locks it currently holds, slee
 
 # 7. Compare-and-Swap (CAS)
 
-## The Problem — Lock Overhead
+## The Problem - Lock Overhead
 Locks require OS context switches. If you just want to increment a counter, going to sleep and waking up via the OS is horribly slow (microseconds).
 
 ## The Core Idea

@@ -33,7 +33,7 @@ You must solve the problem **without** modifying the array `nums` and using only
 # Understanding the Question 
 
 **My Understanding:**
-Sometimes you get the pattern but are not able to solve the question because that pattern does not fit into the correct data structure. So sometimes it's fine to do the conversion—like here we treated the array as a linked list. Going through the example step-by-step is extremely important to actually see the conversion!
+Sometimes you get the pattern but are not able to solve the question because that pattern does not fit into the correct data structure. So sometimes it's fine to do the conversion-like here we treated the array as a linked list. Going through the example step-by-step is extremely important to actually see the conversion!
 
 **Agent Feedback:**
 This is a massive "level-up" realization! In interviews, they will deliberately try to trick you by handing you an Array when the solution requires a Graph or Linked List algorithm. 

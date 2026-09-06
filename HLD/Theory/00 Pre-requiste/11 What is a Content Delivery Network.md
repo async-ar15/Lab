@@ -4,7 +4,7 @@ Imagine you've built an app that serves video content to millions of users world
 
 To keep things simple, you host all your videos in one geographical location.
 
-At first, everything seems to work fine—users located near the server enjoy smooth playback with minimal buffering.
+At first, everything seems to work fine-users located near the server enjoy smooth playback with minimal buffering.
 
 But as your audience grows globally, you start noticing a problem.
 

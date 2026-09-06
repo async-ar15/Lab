@@ -1,4 +1,4 @@
-# Networking Fundamentals — Theory Super
+# Networking Fundamentals - Theory Super
 
 ## Global Mind Map: Networking Fundamentals
 
@@ -41,7 +41,7 @@ graph TB
 
 # 1. OSI Model
 
-## The Problem — "The Network is Broken"
+## The Problem - "The Network is Broken"
 Early networks were split across vendor-specific protocols and hardware. Systems from one vendor often could not communicate with systems from another. Furthermore, when an API call fails today, saying "the network is broken" is too vague. Is it a bad cable, a routing issue, a TCP timeout, or an application error? 
 
 ## The Core Idea
@@ -97,7 +97,7 @@ The receiver unwraps (decapsulates) in reverse.
 
 # 2. IP Addresses
 
-## The Problem — Routing Coordinates
+## The Problem - Routing Coordinates
 Routers, firewalls, and load balancers need to know exactly where to send a packet. 
 
 ## The Core Idea
@@ -131,7 +131,7 @@ Overlapping CIDR ranges between two VPCs makes routing between them impossible w
 
 # 3. Domain Name System (DNS)
 
-## The Problem — Humans Can't Memorize IPs
+## The Problem - Humans Can't Memorize IPs
 Computers communicate using IP addresses (`104.198.32.55`), but humans use names (`google.com`).
 
 ## The Core Idea
@@ -160,7 +160,7 @@ DNS uses **Anycast** routing (the same IP is advertised globally, routing you to
 
 # 4. Proxy vs Reverse Proxy
 
-## The Problem — Exposing Internal Systems
+## The Problem - Exposing Internal Systems
 Directly exposing backend servers to the internet invites DDoS attacks, security breaches, and limits your ability to cache, load balance, or encrypt traffic centrally. Conversely, letting internal corporate laptops access the wild internet directly invites malware.
 
 ## The Core Idea
@@ -198,7 +198,7 @@ server {
 
 # 5. HTTP and HTTPS
 
-## The Problem — Talking to Web Servers
+## The Problem - Talking to Web Servers
 Clients and servers need a standardized language to request resources and return data, along with a way to ensure that communication isn't intercepted or modified by malicious actors.
 
 ## The Core Idea
@@ -228,7 +228,7 @@ HTTPS encrypts the connection.
 
 # 6. TCP vs UDP
 
-## The Problem — How to Send the Bytes
+## The Problem - How to Send the Bytes
 Once IP finds the machine, how do the bytes get to the specific program? If a byte drops, do we stop everything and wait for it, or just keep going?
 
 ## The Core Idea
@@ -253,7 +253,7 @@ Runs over UDP but adds TLS 1.3, reliability, and congestion control itself. Avoi
 
 # 7. Load Balancing
 
-## The Problem — Crushing a Single Server
+## The Problem - Crushing a Single Server
 A single server will crash under heavy traffic. If you scale horizontally to 10 servers, how do you decide which server gets the next request?
 
 ## The Core Idea
@@ -278,7 +278,7 @@ A single server will crash under heavy traffic. If you scale horizontally to 10 
 
 # 8. Checksums
 
-## The Problem — Silent Data Corruption
+## The Problem - Silent Data Corruption
 A network packet gets damaged by electrical noise, or a hard drive flips a bit due to cosmic rays. The bytes don't tell the application they are broken. If the application processes corrupt data, it corrupts the database permanently.
 
 ## The Core Idea

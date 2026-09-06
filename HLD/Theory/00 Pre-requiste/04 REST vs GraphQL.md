@@ -66,19 +66,19 @@ REST APIs typically return data in JSON and use HTTP status codes to communicate
   - `GET /api/users/123` (fetch user)
   - `GET /api/users/123/posts` (fetch user’s posts)
 - **Versioning issues:** When APIs evolve, maintaining backward compatibility becomes difficult. REST APIs often require versioned URLs (`/v1/users`, `/v2/users`), adding maintenance overhead.
-- **Rigid Response Structure:** The server defines how data is returned, and clients must adapt to it—even if they only need a subset of the data.
+- **Rigid Response Structure:** The server defines how data is returned, and clients must adapt to it-even if they only need a subset of the data.
 
 Share
 
 ---
 
 ## 2. What is GraphQL?
-For years, REST was the de facto standard for building APIs. However, as applications grew more complex, REST began to show limitations—especially in scenarios where clients needed fine-grained control over the data they fetched.
+For years, REST was the de facto standard for building APIs. However, as applications grew more complex, REST began to show limitations-especially in scenarios where clients needed fine-grained control over the data they fetched.
 
 To address these challenges, Facebook introduced GraphQL in 2015, offering a more flexible and efficient approach to data retrieval.
 
 ### How GraphQL Works
-Unlike REST, which organizes APIs around fixed endpoints and HTTP methods, GraphQL is a query language that allows clients to request exactly the data they need—nothing more, nothing less.
+Unlike REST, which organizes APIs around fixed endpoints and HTTP methods, GraphQL is a query language that allows clients to request exactly the data they need-nothing more, nothing less.
 
 A single GraphQL endpoint (`/graphql`) replaces multiple REST endpoints, allowing clients to structure their own queries instead of relying on predefined responses.
 
@@ -217,7 +217,7 @@ With REST, this scenario is less likely because API endpoints are predefined, an
 
 With GraphQL, the client constructs the query, which could inadvertently request massive amounts of data. If a poorly designed query is executed on a high-traffic service, it could bring down the entire database.
 
-To mitigate this, GraphQL APIs require strict query rate limiting, depth restrictions, and cost analysis mechanisms—adding additional complexity to the implementation.
+To mitigate this, GraphQL APIs require strict query rate limiting, depth restrictions, and cost analysis mechanisms-adding additional complexity to the implementation.
 
 ---
 

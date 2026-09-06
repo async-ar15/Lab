@@ -1,4 +1,4 @@
-# Concurrency Patterns — Theory Super
+# Concurrency Patterns - Theory Super
 
 ## Global Mind Map: Concurrency Patterns
 
@@ -29,7 +29,7 @@ graph TB
 
 # 1. Signaling Pattern
 
-## The Problem — Unreliable Notifications
+## The Problem - Unreliable Notifications
 If Thread A needs to tell Thread B "I'm done initializing the database", Thread B could sit in a `while(!ready)` loop. This burns 100% of the CPU doing nothing. Alternatively, Thread A could signal Thread B using a condition variable, but if Thread A sends the signal *before* Thread B starts waiting, the signal is lost forever in the void, and Thread B will sleep infinitely.
 
 ## The Core Idea
@@ -52,7 +52,7 @@ The most robust way to implement signaling is using a **Semaphore initialized to
 
 # 2. Thread Pool Pattern
 
-## The Problem — The Cost of Thread Creation
+## The Problem - The Cost of Thread Creation
 Spawning a thread takes ~10-30 microseconds and allocates 1-8 MB of stack space. If a server receives 10,000 requests per second and spawns a thread for each, it dies from Memory OutOfBounds and Context Switching overload (the "Thundering Herd" problem). 
 
 ## The Core Idea
@@ -75,7 +75,7 @@ A **Thread Pool** keeps a fixed team of worker threads alive permanently and fee
 
 # 3. Producer-Consumer Pattern
 
-## The Problem — Speed Mismatches
+## The Problem - Speed Mismatches
 If a fast web scraper (Producer) sends data directly to a slow database writer (Consumer), the scraper has to block and wait, wasting its speed. If it doesn't block, data gets dropped.
 
 ## The Core Idea
@@ -102,7 +102,7 @@ Using basic Condition Variables:
 
 # 4. Reader-Writer Pattern
 
-## The Problem — Unnecessary Read Serialization
+## The Problem - Unnecessary Read Serialization
 A normal Mutex allows only one thread inside a critical section. If you have 100 threads trying to *read* a config file, and 1 thread trying to *write* to it, the 100 reads are executed one-by-one. This is a massive waste of concurrency, because reading is non-destructive.
 
 ## The Core Idea

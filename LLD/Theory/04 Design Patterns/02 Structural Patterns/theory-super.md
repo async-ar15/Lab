@@ -1,4 +1,4 @@
-# Structural Design Patterns — Theory Super
+# Structural Design Patterns - Theory Super
 
 ## Global Mind Map: Structural Patterns
 
@@ -25,7 +25,7 @@ graph TB
 
 # 1. Adapter
 
-## The Problem — Incompatible Interfaces
+## The Problem - Incompatible Interfaces
 Imagine you have an e-commerce checkout system that processes payments via a standard `PaymentProcessor` interface (using cents). Now, you need to integrate a legacy or third-party `ExternalPaymentGateway` that expects dollars and uses a completely different method name. You cannot rewrite the third-party gateway, and rewriting your entire checkout system to match their interface would tightly couple you to their exact implementation.
 
 ## The Core Idea
@@ -75,7 +75,7 @@ processor.pay(4999);
 
 # 2. Facade
 
-## The Problem — Complex Subsystems
+## The Problem - Complex Subsystems
 If you are building a client for a video publishing platform, publishing a video involves compression, generating thumbnails, uploading to storage, saving to a repository, and sending notifications. If the client has to coordinate all these steps, it becomes tightly coupled to the internal workflow.
 
 ```java
@@ -114,7 +114,7 @@ facade.publish("clip.mp4");
 
 # 3. Proxy
 
-## The Problem — Expensive Object Creation
+## The Problem - Expensive Object Creation
 Imagine an image gallery app where high-resolution images are loaded from disk the moment they are instantiated. If you instantiate 100 images but the user only views 1, you have wasted massive amounts of memory and processing time.
 
 ## The Core Idea
@@ -161,7 +161,7 @@ image3.display(); // Only loads now!
 
 # 4. Decorator
 
-## The Problem — Subclass Explosion
+## The Problem - Subclass Explosion
 You have a `TextView` that renders plain text. You want to add Bold, Italic, and Underline formatting. If you try to do this via inheritance, you need a `BoldTextView`, an `ItalicTextView`, a `BoldItalicTextView`, etc. This leads to an explosion of subclasses.
 
 ## The Core Idea
@@ -199,7 +199,7 @@ TextView boldItalic = new ItalicDecorator(new BoldDecorator(plain));
 
 # 5. Composite
 
-## The Problem — Handling Parts and Wholes Differently
+## The Problem - Handling Parts and Wholes Differently
 In a file system, a file is a single object, while a folder contains files and other folders. If a client wants to calculate the total size, it has to write complex `instanceof` checks and recursive loops that treat files and folders differently.
 
 ## The Core Idea
@@ -249,7 +249,7 @@ System.out.println(item.getSize());
 
 # 6. Bridge
 
-## The Problem — Orthogonal Dimensions causing Class Explosion
+## The Problem - Orthogonal Dimensions causing Class Explosion
 Imagine drawing shapes (Circle, Rectangle) using different renderers (Vector, Raster). If you use inheritance, you need a `VectorCircle`, `RasterCircle`, `VectorRectangle`, `RasterRectangle`. (Shapes × Renderers = Subclass Explosion). They are tightly coupled, and adding a new renderer requires editing or adding every shape.
 
 ## The Core Idea
@@ -300,7 +300,7 @@ circle.draw();
 
 # 7. Flyweight
 
-## The Problem — Massive Memory Redundancy
+## The Problem - Massive Memory Redundancy
 Imagine a text editor rendering 500,000 characters. If every character object stores its own font, size, color, and X/Y position, you waste 50MB of memory on duplicated formatting data (since most characters share the exact same font/color).
 
 ## The Core Idea

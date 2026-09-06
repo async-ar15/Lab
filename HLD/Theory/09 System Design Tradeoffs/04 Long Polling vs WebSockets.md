@@ -1,11 +1,11 @@
 
-Whether you are playing an online game or chatting with a friend—updates appear in real-time without hitting “refresh”.
+Whether you are playing an online game or chatting with a friend-updates appear in real-time without hitting “refresh”.
 
 Behind these seamless experiences lies a critical engineering decision: how to push real-time updates from servers to clients.
 
 The traditional HTTP model was designed for request-response: "Client asks, server answers.". But in many real-time systems, the server needs to talk first and more often.
 
-This is where Long Polling and WebSockets come into play—two popular methods for achieving real-time updates.
+This is where Long Polling and WebSockets come into play-two popular methods for achieving real-time updates.
 
 In this article, we’ll explore these two techniques, how they work, their pros and cons, and use cases.
 
@@ -33,7 +33,7 @@ No automatic updates: With plain HTTP, the server cannot proactively push data t
 
 Stateless nature: HTTP is stateless, meaning each request stands alone with no persistent connection to the server. This can be problematic if you need continuous exchange of data.
 
-To build truly real-time features—live chat, financial tickers, or gaming updates—you need a mechanism where the server can instantly notify the client when something changes.
+To build truly real-time features-live chat, financial tickers, or gaming updates-you need a mechanism where the server can instantly notify the client when something changes.
 
 2. Long Polling
 Long polling is a technique that mimics real-time behavior by keeping HTTP requests open until the server has data.
@@ -51,7 +51,7 @@ If there's new data, the server immediately responds.
 
 If there’s no new data and the timeout is reached, the server responds with an empty or minimal message.
 
-Once the client receives a response—new data or a timeout—it immediately sends a new request to the server to keep the connection loop going.
+Once the client receives a response-new data or a timeout-it immediately sends a new request to the server to keep the connection loop going.
 
 
 

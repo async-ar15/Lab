@@ -1,4 +1,4 @@
-# Behavioral Design Patterns — Theory Super
+# Behavioral Design Patterns - Theory Super
 
 ## Global Mind Map: Behavioral Patterns
 
@@ -29,7 +29,7 @@ graph TB
 
 # 1. Strategy
 
-## The Problem — Massive Conditional Blocks
+## The Problem - Massive Conditional Blocks
 Imagine a navigation app (`RoutePlanner`) that calculates routes for driving, walking, cycling, or transit. If you put all the logic in one class with massive `if-else` blocks, the class becomes unmaintainable, hard to test, and tightly coupled to every possible routing algorithm. Every time you add a new travel mode, you have to edit this core class.
 
 ## The Core Idea
@@ -81,7 +81,7 @@ planner.buildRoute("Berlin", "Munich");
 
 # 2. Observer
 
-## The Problem — Tightly Coupled Reactions
+## The Problem - Tightly Coupled Reactions
 In an e-commerce system, when an order is shipped, you need to send an email, update inventory, track analytics, and add loyalty points. If `OrderService.shipOrder()` calls all these services directly, it becomes tightly coupled to everything that happens *after* an order is shipped.
 
 ## The Core Idea
@@ -125,7 +125,7 @@ class OrderService {
 
 # 3. State
 
-## The Problem — Complex State Machines
+## The Problem - Complex State Machines
 An Order can be `NEW`, `PAID`, `SHIPPED`, or `DELIVERED`. Calling `ship()` on a `NEW` order is an error. Using `if(status.equals("..."))` inside every method creates brittle, massive classes that are a nightmare to maintain.
 
 ## The Core Idea
@@ -173,7 +173,7 @@ class Order {
 
 # 4. Command
 
-## The Problem — Hardcoded Actions and No Undo
+## The Problem - Hardcoded Actions and No Undo
 In a text editor, a Toolbar button triggers an action. If the Toolbar calls `editor.addText()` directly, it is tightly coupled to the editor. Furthermore, if the user clicks "Undo", the Toolbar has no idea what was just done or how to reverse it.
 
 ## The Core Idea
@@ -222,7 +222,7 @@ class CommandManager {
 
 # 5. Template Method
 
-## The Problem — Duplicated Workflows
+## The Problem - Duplicated Workflows
 You have a data importer for CSV and JSON. Both follow the exact same steps: read file, parse, validate, save, generate report. The only difference is the "parse" step. If you write two separate classes, you duplicate the entire workflow.
 
 ## The Core Idea
@@ -263,7 +263,7 @@ class CSVDataImporter extends DataImporter {
 
 # 6. Iterator
 
-## The Problem — Exposed Internal Structures
+## The Problem - Exposed Internal Structures
 If a `Playlist` exposes its internal `List<Song>`, the client code is forced to use a specific traversal method (like a `for` loop with an index). If the `Playlist` changes to use a Tree or a Linked List, the client code breaks.
 
 ## The Core Idea
@@ -305,7 +305,7 @@ class Playlist implements Iterable<Song> {
 
 # 7. Chain of Responsibility
 
-## The Problem — Rigid Processing Pipelines
+## The Problem - Rigid Processing Pipelines
 An API request needs Authentication, Authorization, Rate Limiting, and Validation. Hardcoding these checks inside a single `APIService.handle()` method makes it impossible to reuse checks, reorder them, or apply different chains to different endpoints.
 
 ## The Core Idea
@@ -355,7 +355,7 @@ chain.handle(request);
 
 # 8. Mediator
 
-## The Problem — Tightly Coupled Components (Spaghetti Communication)
+## The Problem - Tightly Coupled Components (Spaghetti Communication)
 In a UI form (TextFields, Button, Label), if the Button needs to check the TextFields before enabling, and the TextField needs to tell the Button when to update, every component holds references to every other component. It becomes a tangled web of dependencies.
 
 ## The Core Idea
@@ -397,7 +397,7 @@ class FormMediator implements UIMediator {
 
 # 9. Memento
 
-## The Problem — Breaking Encapsulation to Save State
+## The Problem - Breaking Encapsulation to Save State
 To implement Undo in a text editor, the client might try to save the editor's state (`String content`). But if the editor later adds `cursorPosition` and `selectionRange`, the client has to be updated to capture those too. The editor's private internals have leaked into the client.
 
 ## The Core Idea

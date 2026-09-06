@@ -128,7 +128,7 @@ graph TD
 
 ## 9. GraphQL
 **The Problem:** REST's rigid endpoints force inefficient data fetching.
-**The Core Concept:** A query language (introduced by Facebook) that allows clients to ask for exactly what they need—nothing more, nothing less.
+**The Core Concept:** A query language (introduced by Facebook) that allows clients to ask for exactly what they need-nothing more, nothing less.
 **The Mechanism:** Instead of hitting multiple REST endpoints (`/users/123`, `/users/123/profile`, `/users/123/posts`), a client sends a single GraphQL query specifying the exact fields required. The server responds with only that structured data.
 **Trade-offs:** Highly efficient for the network, but requires more processing on the server side and is harder to cache than REST.
 
@@ -195,7 +195,7 @@ graph TD
 **The Mechanism & Trade-offs:**
 1. **Data Model:** SQL uses linked tables (Foreign Keys). NoSQL uses flexible documents (JSON), key-value pairs, or graphs.
 2. **Schema:** SQL demands a rigid schema defined upfront (modifying it later requires complex migrations). NoSQL is schema-less (fields can vary per document).
-3. **Scalability:** SQL scales vertically (Scaling Up—buying a bigger, more expensive server). NoSQL scales horizontally (Scaling Out—adding cheap, distributed servers).
+3. **Scalability:** SQL scales vertically (Scaling Up-buying a bigger, more expensive server). NoSQL scales horizontally (Scaling Out-adding cheap, distributed servers).
 4. **Query Language:** SQL uses standardized, powerful declarative SQL. NoSQL uses proprietary APIs/queries specific to the database engine.
 5. **Transactions:** SQL guarantees strict ACID properties (Atomicity, Consistency, Isolation, Durability) for absolute data integrity. NoSQL relies on BASE (Basically Available, Soft state, Eventual consistency), sacrificing immediate consistency to stay available during failures.
 6. **Performance:** SQL excels at complex `JOIN` queries on medium datasets. NoSQL excels at massive read/write throughput on giant datasets.
@@ -280,7 +280,7 @@ graph TD
 1. Application checks the cache.
 2. If data is present, return it instantly.
 3. If not, retrieve it from the database, store a copy in the cache, and return it. Next time, it serves directly from memory.
-**Data Freshness:** We use Time-to-Live (TTL)—an expiration timer so cached data automatically drops and refreshes. (Tools: Redis, Memcached).
+**Data Freshness:** We use Time-to-Live (TTL)-an expiration timer so cached data automatically drops and refreshes. (Tools: Redis, Memcached).
 
 ### Deep Dive: Top 5 Caching Strategies
 **The Problem:** Fetching data from a database (disk) repeatedly is slow and computationally expensive.
@@ -396,7 +396,7 @@ graph TD
 5. **Sliding Window Counter:** A mathematical hybrid. Uses fixed windows, but calculates a weighted percentage based on how far you are into the current window. Pros: The industry standard. Highly accurate and highly memory-efficient.
 
 ## 29. API Gateways
-**The Problem:** Exposing dozens of internal microservices directly to public clients introduces chaos—how do you handle authentication, routing, and rate-limiting for all of them?
+**The Problem:** Exposing dozens of internal microservices directly to public clients introduces chaos-how do you handle authentication, routing, and rate-limiting for all of them?
 **The Core Concept:** A centralized, single entry point for all client requests.
 **The Mechanism:** The gateway intercepts all traffic. It handles universal tasks (authentication, rate limiting, logging), determines which specific microservice needs to handle the request, routes it there, and ferries the response back to the client.
 

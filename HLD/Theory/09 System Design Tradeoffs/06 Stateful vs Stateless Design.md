@@ -8,7 +8,7 @@ In software systems, state refers to any data that persists across requests, suc
 
 The choice between stateless and stateful architecture can affect scalability, performance, complexity, and cost.
 
-In this article, we’ll break down both the approaches, their advantages and trade-offs, and when to use each—with real-world examples.
+In this article, we’ll break down both the approaches, their advantages and trade-offs, and when to use each-with real-world examples.
 
 If you’re enjoying this newsletter and want to get even more value, consider becoming a paid subscriber.
 
@@ -19,7 +19,7 @@ Unlock Full Access
 1. Stateful Architecture
 In a stateful architecture, the system remembers client or process data (state) across multiple requests.
 
-Once a client connects, the server holds on to certain details—like user preferences, shopping cart contents, or authentication sessions—so the client doesn’t need to resend everything with each request.
+Once a client connects, the server holds on to certain details-like user preferences, shopping cart contents, or authentication sessions-so the client doesn’t need to resend everything with each request.
 
 Stateful systems typically store the state data in a database or in-memory storage.
 

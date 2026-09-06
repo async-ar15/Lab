@@ -1,4 +1,4 @@
-# Asynchronous Communication — Theory Super
+# Asynchronous Communication - Theory Super
 
 ## Global Mind Map: How Asynchronous Concepts Connect
 
@@ -29,7 +29,7 @@ graph TB
 
 # 1. Publish-Subscribe (Pub/Sub)
 
-## The Problem — The Tight Coupling of Events
+## The Problem - The Tight Coupling of Events
 When an order is placed, many independent systems need to react: inventory, emails, analytics, fraud detection, and shipping. If the Order Service has to call all of these services directly (synchronously), the checkout process becomes incredibly slow. Furthermore, if the Email Service goes down, the entire checkout process might fail. 
 
 ## What is Pub/Sub?
@@ -59,7 +59,7 @@ Pub/sub allows a publisher to announce an event to a central "Topic" without kno
 
 # 2. Message Queues
 
-## The Problem — Synchronous Bottlenecks
+## The Problem - Synchronous Bottlenecks
 If a web server accepts a user's video upload and directly processes the video, the user has to stare at a loading spinner for 10 minutes. The server is tied up and cannot serve other users.
 
 ## What is a Message Queue?
@@ -97,7 +97,7 @@ Because of this retry logic, **consumers must be idempotent** (safe to process t
 
 # 3. Change Data Capture (CDC)
 
-## The Problem — Keeping Distributed Systems in Sync
+## The Problem - Keeping Distributed Systems in Sync
 If you have a PostgreSQL database as your source of truth, but you need that data in Elasticsearch for searching, Redis for caching, and Snowflake for analytics, how do you keep them updated? 
 Nightly batch jobs result in stale data and heavy database scans. 
 

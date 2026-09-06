@@ -4,7 +4,7 @@ As a developer, I have been lucky enough to work with some SOAP services that ar
 
 For a great chunk of my career, I have been involved in projects either building, designing, and using APIs.
 
-Most of the APIs I have seen “claimed” to be “RESTful” — meaning compliant with the principles and constraints of REST architecture.
+Most of the APIs I have seen “claimed” to be “RESTful” - meaning compliant with the principles and constraints of REST architecture.
 
 Yet, there are a few handful I have worked with that give REST a very, very bad rep.
 
@@ -15,7 +15,7 @@ So, I decided to write up a piece describing what I personally think are some be
 Just so we’re clear…
 I do not claim to be the authority, or mean to infer that the following practices are 100% in sync with any “holy REST principles” (if there even is such a thing in existence). I have pieced these thoughts from my own experiences building, and working with different APIs throughout my career.
 
-Also, I do not pretend to have mastered REST API design, either! I believe it is an art/sport — the more you practice, the better you get.
+Also, I do not pretend to have mastered REST API design, either! I believe it is an art/sport - the more you practice, the better you get.
 
 I will list out some code snippets as “examples of bad design”. If they look like something you would write, that’s fine! 🙂 The only thing that matters is that we learn together.
 
@@ -41,7 +41,7 @@ Although this is not imposed or mandated by any REST architectural style, most R
 
 However, it is not good enough to just return a response body containing a JSON-formatted String. You should still specify the Content-Type header. It must be set to the value application/json.
 
-This is especially important when dealing with application/programmatic clients (example, another service/API interacting with your API via the requests library in Python) — some of them rely on this header to accurately decode the response.
+This is especially important when dealing with application/programmatic clients (example, another service/API interacting with your API via the requests library in Python) - some of them rely on this header to accurately decode the response.
 
 💡Pro-Tip: You can verify a reponse’s Content-Type pretty easily with Firefox. It has built-in pretty display for responses with Content-Type: application/json. 🔥
 
@@ -127,7 +127,7 @@ Content-Type: text/html
         "error": "Expected at least three items in the list."
     }
 }
-(Yes — it also returned HTML content. Because, why not?)
+(Yes - it also returned HTML content. Because, why not?)
 
 As a result, I had to check the status code AND the ad-hoc status field to make absolutely sure that everything was fine before I would read the data.
 
@@ -164,7 +164,7 @@ DELETE: 204 No Content
 8. Do not nest resources
 You are probably noticing by now that REST APIs deal with resources. Retrieving a list, or a single instance of a resource is straightforward. But, what happens when you deal with related resources?
 
-For example, let’s say we want to retrieve the list of books for a particular author — the one with name=Cagan. There are basically two options.
+For example, let’s say we want to retrieve the list of books for a particular author - the one with name=Cagan. There are basically two options.
 
 The first option would be to nest the books resource under the authors resource, example:
 
@@ -230,7 +230,7 @@ Beautifully explicit, isn’t it?
 11. Know the difference between 401 Unauthorized and 403 Forbidden
 If I had a quarter for every single time I have seen developers and even some experienced architects mess this up…
 
-When handling security errors in a REST API, it is extremely easy to get confused about whether the error relates to Authentication or Authorization (a.k.a. permissions) — used to happen to me all of the time.
+When handling security errors in a REST API, it is extremely easy to get confused about whether the error relates to Authentication or Authorization (a.k.a. permissions) - used to happen to me all of the time.
 
 This is my cheat sheet for knowing what I am dealing with, depending on the situation:
 
@@ -243,7 +243,7 @@ I, the server, have understood your request. I have not created the resource (ye
 
 There are two main scenarios which I find 202 Accepted to be especially suitable:
 
-If the resource will be created as a result of future processing — example: After a job/process has finished.
+If the resource will be created as a result of future processing - example: After a job/process has finished.
 If the resource already existed in some way, but this should not be interpreted as an error.
 13. Use a web framework specialized in REST APIs
 As a last best practice, let’s discuss this question: How do you actually implement best practices in your API?
@@ -256,7 +256,7 @@ The issue with this approach is that generally, the framework is not targeted at
 
 For example, both Flask and Express are two very versatile frameworks, but they were not specifically made to help you build REST APIs.
 
-As a result, you have to take extra steps to implement best practices in your API. And most of the times, laziness or a lack of time mean you will not make the effort — and leave your consumers with a quirky API.
+As a result, you have to take extra steps to implement best practices in your API. And most of the times, laziness or a lack of time mean you will not make the effort - and leave your consumers with a quirky API.
 
 The solution is simple: Use the right tool for the job.
 

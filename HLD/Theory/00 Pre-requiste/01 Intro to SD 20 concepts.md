@@ -1,6 +1,6 @@
 System Design can feel overwhelming especially when you're just starting out and don’t know where to begin.
 
-But once you understand the core concepts and building blocks, it becomes much less intimidating—whether you're preparing for interviews or designing scalable systems at work.
+But once you understand the core concepts and building blocks, it becomes much less intimidating-whether you're preparing for interviews or designing scalable systems at work.
 
 In this article, I’ll walk you through the 30 most important System Design concepts every developer should know.
 
@@ -11,7 +11,7 @@ Learning these concepts helped me land offers from multiple big tech companies. 
 
 I’ve also included links to detailed articles I’ve written on several of these topics, so you can dive deeper whenever you’d like.
 
-I also recently created a 20-minute YouTube video that quickly walks through all 30 concepts—packed with visuals and animations to make everything easier to understand.
+I also recently created a 20-minute YouTube video that quickly walks through all 30 concepts-packed with visuals and animations to make everything easier to understand.
 
 
 Watch the full video
@@ -22,9 +22,9 @@ Subscribe for more such videos!
 Almost every web application that you use is built on this simple yet powerful concept called client-server architecture.
 
 
-On one side, you have a client—this could be a web browser, a mobile app, or any other frontend application.
+On one side, you have a client-this could be a web browser, a mobile app, or any other frontend application.
 
-and on the other side, you have a server—a machine that runs continuously, waiting to handle incoming requests.
+and on the other side, you have a server-a machine that runs continuously, waiting to handle incoming requests.
 
 The client sends a request to store, retrieve, or modify data.
 
@@ -44,11 +44,11 @@ Every publicly deployed server has a unique IP address. When a client wants to i
 
 But there’s a problem:
 
-When we visit a website, we don’t type its IP address—we just enter the website name.
+When we visit a website, we don’t type its IP address-we just enter the website name.
 
 We can’t expect users (or even systems) to memorize a string of random numbers for every service they connect to.
 
-And if we migrate our service to another server, its IP address may change—breaking all direct connections.
+And if we migrate our service to another server, its IP address may change-breaking all direct connections.
 
 ## 3. DNS
 Instead of relying on hard-to-remember IP addresses, we use something much more human-friendly: domain names.
@@ -71,7 +71,7 @@ You can find the IP address of any domain using the ping command. Just open your
 Share
 
 ## 4. Proxy / Reverse Proxy
-When you visit a website, your request doesn’t always go directly to the server—sometimes, it passes through a proxy or reverse proxy first.
+When you visit a website, your request doesn’t always go directly to the server-sometimes, it passes through a proxy or reverse proxy first.
 
 A proxy server acts as a middleman between your device and the internet.
 
@@ -107,9 +107,9 @@ Whenever a client communicates with a server, there’s always some delay. One o
 
 
 
-For example, if our server is in New York, but a user in India sends a request, the data has to travel halfway across the world—and then the response has to make the same long trip back.
+For example, if our server is in New York, but a user in India sends a request, the data has to travel halfway across the world-and then the response has to make the same long trip back.
 
-This round-trip delay is called latency—the total time it takes for data to travel between the client and the server. High latency can make applications feel slow and unresponsive.
+This round-trip delay is called latency-the total time it takes for data to travel between the client and the server. High latency can make applications feel slow and unresponsive.
 
 One way to reduce latency is by deploying our service across multiple data centers worldwide.
 
@@ -129,7 +129,7 @@ Here’s how it works:
 
 The client sends a request to the server. This request includes a header (containing details like the request type, browser type, and cookies) and sometimes a request body (which carries additional data, like form inputs).
 
-The server processes the request and responds with an HTTP response—either returning the requested data or an error message if something goes wrong.
+The server processes the request and responds with an HTTP response-either returning the requested data or an error message if something goes wrong.
 
 HTTP has a major security flaw, it sends data in plain text. This is a serious problem, especially for sensitive information like passwords, credit card details, and personal data.
 
@@ -151,7 +151,7 @@ This is where APIs (or Application Programming Interfaces) come in.
 Think of an API as a middleman that allows clients (like web and mobile apps) to communicate with servers without worrying about low-level details.
 
 
-Almost every digital service you use—social media, e-commerce, online banking, ride-hailing apps—is built on APIs working together behind the scenes.
+Almost every digital service you use-social media, e-commerce, online banking, ride-hailing apps-is built on APIs working together behind the scenes.
 
 Here’s how it typically works:
 
@@ -161,7 +161,7 @@ The API, hosted on a server, processes the request, interacts with databases or 
 
 The API sends back the response in a structured format, usually JSON or XML, which the client understands and can display.
 
-APIs provide a layer of abstraction—the client doesn’t need to know how the server processes the request, only that it returns the expected data.
+APIs provide a layer of abstraction-the client doesn’t need to know how the server processes the request, only that it returns the expected data.
 
 If you want to learn more about APIs, checkout this article:
 
@@ -204,7 +204,7 @@ REST endpoints often return more data than needed, leading to inefficient networ
 To address these challenges, GraphQL was introduced in 2015 by Facebook.
 
 ## 9. GraphQL
-Unlike REST, which forces clients to retrieve fixed sets of data, GraphQL lets clients ask for exactly what they need—nothing more, nothing less.
+Unlike REST, which forces clients to retrieve fixed sets of data, GraphQL lets clients ask for exactly what they need-nothing more, nothing less.
 
 With a REST API, if you need a user details, user profile details along with their recent posts, you might have to make multiple requests to different endpoints:
 
@@ -221,7 +221,7 @@ With GraphQL, you can combine those requests into one and fetch exactly the data
 
 The server responds with only the requested fields, reducing unnecessary data transfer and improving efficiency.
 
-However, GraphQL also comes with trade-offs—it requires more processing on the server side and isn’t as easy to cache as REST.
+However, GraphQL also comes with trade-offs-it requires more processing on the server side and isn’t as easy to cache as REST.
 
 Learn more about REST vs GraphQL here:
 
@@ -233,14 +233,14 @@ March 11, 2025
 Read full story
 When a client makes a request, they usually want to store or retrieve data.
 
-But this brings up another question—where is the actual data stored?
+But this brings up another question-where is the actual data stored?
 
 ## 10. Databases
 If our application deals with small amounts of data, we could store it in memory.
 
-But modern applications handle massive volumes of data—far more than what memory can efficiently handle.
+But modern applications handle massive volumes of data-far more than what memory can efficiently handle.
 
-That’s why we need a dedicated server for storing and managing data—a database.
+That’s why we need a dedicated server for storing and managing data-a database.
 
 A database is the backbone of any application. It ensures that data is stored, retrieved, and managed efficiently while keeping it secure, consistent, and durable.
 
@@ -323,7 +323,7 @@ One of the quickest solutions is to upgrade the existing server by adding more C
 
 
 
-This approach is called Vertical Scaling (Scaling Up)—making a single machine more powerful.
+This approach is called Vertical Scaling (Scaling Up)-making a single machine more powerful.
 
 But there are some major limitations with this approach:
 
@@ -335,13 +335,13 @@ Single Point of Failure (SPOF) → if this one server crashes, the entire system
 
 So, while vertical scaling is a quick fix, it’s not a long-term solution for handling high traffic and ensuring system reliability.
 
-Lets look at a better approach—one that makes our system more scalable and fault tolerant.
+Lets look at a better approach-one that makes our system more scalable and fault tolerant.
 
 ## 13. Horizontal Scaling
 Instead of upgrading a single server, what if we add more servers to share the load?
 
 
-This approach is called Horizontal Scaling (Scaling Out)—where we distribute the workload across multiple machines.
+This approach is called Horizontal Scaling (Scaling Out)-where we distribute the workload across multiple machines.
 
 This approach is better because:
 
@@ -390,7 +390,7 @@ So, let’s explore other database scaling techniques that help manage large vol
 ## 15. Database Indexing
 One of the quickest and most effective ways to speed up database read queries is indexing.
 
-Think of it like the index page at the back of a book—instead of flipping through every page, you jump directly to the relevant section.
+Think of it like the index page at the back of a book-instead of flipping through every page, you jump directly to the relevant section.
 
 A database index works the same way. It’s is a super-efficient lookup table that helps the database quickly locate the required data without scanning the entire table.
 
@@ -407,7 +407,7 @@ Foreign keys
 
 Columns used in WHERE conditions
 
-But be careful—while indexes speed up reads, they slow down writes (INSERT, UPDATE, DELETE) since the index needs to be updated whenever data changes.
+But be careful-while indexes speed up reads, they slow down writes (INSERT, UPDATE, DELETE) since the index needs to be updated whenever data changes.
 
 That’s why we should only index the most frequently accessed columns.
 
@@ -531,7 +531,7 @@ If the data is not in the cache, the application retrieves it from the database,
 
 Next time, the same data is requested, it’s served directly from cache, making the request much faster.
 
-To prevent outdated data from being served, we use Time-to-Live (TTL)—an expiration time set on cached data so it gets automatically refreshed after a certain period.
+To prevent outdated data from being served, we use Time-to-Live (TTL)-an expiration time set on cached data so it gets automatically refreshed after a certain period.
 
 Popular caching tools include Redis and Memcached.
 
@@ -568,7 +568,7 @@ Denormalization reduces the number of joins by combining related data into a sin
 
 Example: Instead of keeping Users and Orders in separate tables, we create UserOrders table that stores user details along with their latest orders.
 
-Now, when retrieving a user’s order history, we don’t need a JOIN operation—the data is already stored together leading to faster queries and better read performance.
+Now, when retrieving a user’s order history, we don’t need a JOIN operation-the data is already stored together leading to faster queries and better read performance.
 
 SELECT order_id, user_name AS name, user_email AS email, product, amount
 FROM orders;
@@ -604,7 +604,7 @@ July 31, 2024
 Read full story
 In distributed NoSQL databases, achieving instant consistency across all servers is too slow.
 
-Instead, we use Eventual Consistency—which means:
+Instead, we use Eventual Consistency-which means:
 
 Not all nodes are updated instantly, but given enough time, they eventually sync and return the same data.
 
@@ -627,7 +627,7 @@ But here’s the problem: Traditional databases are not designed to store large,
 
 So, what’s the solution?
 
-We use Blob Storage like Amazon S3—a highly scalable and cost-effective way to store large, unstructured files in the cloud.
+We use Blob Storage like Amazon S3-a highly scalable and cost-effective way to store large, unstructured files in the cloud.
 
 
 
@@ -692,7 +692,7 @@ If the client needs new data, it must send another request.
 
 This works fine for static web pages but it’s too slow and inefficient for real-time applications like: live chat apps, stock market dashboards and online multiplayer games.
 
-With HTTP, the only way to get real-time updates is through polling—sending repeated requests every few seconds.
+With HTTP, the only way to get real-time updates is through polling-sending repeated requests every few seconds.
 
 But polling is inefficient because it increases server load and wastes bandwidth, as most responses are empty (when there’s no new data).
 
@@ -754,7 +754,7 @@ All features (e.g., authentication, payments, orders, shipping) are inside one l
 
 If one part of the system fails or needs scaling, the entire system is affected.
 
-Deployment is risky—one bad update can take down the entire app.
+Deployment is risky-one bad update can take down the entire app.
 
 Example: Imagine an e-commerce app where the order, payment, inventory, and shipping modules are all tightly connected in a single codebase.
 
@@ -777,7 +777,7 @@ Communicates with other microservices using APIs or message queues.
 
 This way services can be scaled and deployed individually without affecting the entire system.
 
-However, when multiple microservices need to communicate, direct API calls aren’t always efficient—this is where Message Queues come in.
+However, when multiple microservices need to communicate, direct API calls aren’t always efficient-this is where Message Queues come in.
 
 ## 27. Message Queues
 In a monolithic system, functions call each other directly and wait for a response.

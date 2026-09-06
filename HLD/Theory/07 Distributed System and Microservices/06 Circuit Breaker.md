@@ -134,7 +134,7 @@ Solution with Circuit Breaker pattern
 Figure 13: Circuit breaker pattern
 🌟 So, as I mentioned above (in “Main use case for Circuit Breaker”) there are 04 services and a proxy (an aggregator pattern to call those services) in the system.
 
-🌟 After going through the use cause 1 and 2, I’m sure now you know that system failures could happen when an individual service failed (supplier become unresponsive)— Figure 13.
+🌟 After going through the use cause 1 and 2, I’m sure now you know that system failures could happen when an individual service failed (supplier become unresponsive)- Figure 13.
 
 🌟 Then it could lead the system to run out of critical resources (ex: remember how threads were occupied in use case 1).
 

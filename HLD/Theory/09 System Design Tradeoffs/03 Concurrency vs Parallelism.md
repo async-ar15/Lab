@@ -25,7 +25,7 @@ For example, consider playing music while writing code. The CPU alternates betwe
 
 
 Visualized using Multiplayer
-This seamless switching—enabled by modern CPU designs—creates the illusion of multitasking and gives the appearance of tasks running in parallel.
+This seamless switching-enabled by modern CPU designs-creates the illusion of multitasking and gives the appearance of tasks running in parallel.
 
 However, it’s important to note this is not parallel. This is concurrent.
 

@@ -12,7 +12,7 @@ Latency determines the delay that a user experiences when they send or receive d
 
 A network with low throughput and high latency struggles to send and process high data volume, which results in congestion and poor application performance. In contrast, a network with high throughput and low latency is responsive and efficient. Users experience improved performance and increased satisfaction.
 
-High-performing networks directly impact revenue generation and operational efficiency. In addition, certain use cases—like real-time streaming, Internet of Things (IoT) data analytics, and high-performance computing—require certain network performance thresholds to operate optimally.
+High-performing networks directly impact revenue generation and operational efficiency. In addition, certain use cases-like real-time streaming, Internet of Things (IoT) data analytics, and high-performance computing-require certain network performance thresholds to operate optimally.
 
 Key differences: network latency vs. throughput
 Although latency and throughput both contribute to a reliable and fast network, they are not the same. These network metrics focus on distinct statistics and are different from each other.

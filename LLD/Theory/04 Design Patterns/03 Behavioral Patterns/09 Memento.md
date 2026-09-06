@@ -240,9 +240,9 @@ TextEditorUndoManager
 Step 1: Create the Memento - TextEditorMemento
 The memento stores a snapshot of the TextEditor's internal state. It has three important properties:
 
-Immutable — fields are private final (or readonly) and cannot be changed after creation
-Minimal — it stores only what is needed for restoration
-Encapsulated — only the originator should read its contents
+Immutable - fields are private final (or readonly) and cannot be changed after creation
+Minimal - it stores only what is needed for restoration
+Encapsulated - only the originator should read its contents
 
 Java
 
@@ -258,8 +258,8 @@ This class is passive. It does not contain any logic, just a frozen snapshot of 
 Step 2: Create the Originator – TextEditor
 The originator is the object whose state we want to save and restore. It provides two key methods beyond its normal operations:
 
-save() — creates a memento capturing the current state
-restore(memento) — replaces the current state with the state from the memento
+save() - creates a memento capturing the current state
+restore(memento) - replaces the current state with the state from the memento
 
 Java
 
@@ -308,7 +308,7 @@ Expected Output:
 
 What We Achieved
 Encapsulation: Editor’s internal state is never exposed directly to the client
-Clean undo logic: The client doesn’t need to manage or interpret state — it just saves and restores
+Clean undo logic: The client doesn’t need to manage or interpret state - it just saves and restores
 Separation of concerns: The TextEditor handles state, and the TextEditorUndoManager handles history
 Scalability: Easy to extend with redo support, multi-level undo, or persistent versioning
 

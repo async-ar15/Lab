@@ -40,6 +40,27 @@ for (int num : arr) {
     System.out.println(num);
 }
 
+// --- PARTIALLY FILLED ARRAYS (Demonstrating Insertion & Deletion) ---
+int[] partiallyFilled = new int[10]; // Capacity of 10
+partiallyFilled[0] = 10; partiallyFilled[1] = 20; partiallyFilled[2] = 30;
+int currentSize = 3;
+
+// 3. Insertion (Middle/Start) - O(N) due to shifting
+int insertIdx = 1;
+int valueToInsert = 15;
+for (int i = currentSize; i > insertIdx; i--) {
+    partiallyFilled[i] = partiallyFilled[i - 1]; // Shift elements right
+}
+partiallyFilled[insertIdx] = valueToInsert;
+currentSize++; // [10, 15, 20, 30, 0, ...]
+
+// 4. Deletion (Middle/Start) - O(N) due to shifting
+int deleteIdx = 1; // deleting the 15 we just inserted
+for (int i = deleteIdx; i < currentSize - 1; i++) {
+    partiallyFilled[i] = partiallyFilled[i + 1]; // Shift elements left
+}
+currentSize--; // [10, 20, 30, 30, 0, ...] (the extra 30 is ignored since currentSize limits access)
+
 // --- ARRAYLISTS (Dynamic Size) ---
 import java.util.ArrayList;
 import java.util.List;
@@ -117,6 +138,12 @@ for (char ch : new char[]{'a', 'b', 'c', 'd'}) {
     sb.append(ch);              // O(1) append to an internal array
 }
 String goodString = sb.toString(); // O(N) to convert at the end
+
+// 6. Insertion in StringBuilder - O(N)
+sb.insert(1, "xyz");            // "axyzbcd"
+
+// 7. Deletion in StringBuilder - O(N)
+sb.delete(1, 4);                // "abcd" (start inclusive, end exclusive)
 
 
 ```

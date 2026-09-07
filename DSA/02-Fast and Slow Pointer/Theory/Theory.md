@@ -2,10 +2,20 @@
 
 The Fast and Slow pointer pattern (often called the **Hare and Tortoise Algorithm** or **Floyd's Cycle-Finding Algorithm**) is a clever technique where you use two pointers that travel through a structure (usually a Linked List) at different speeds.
 
-By having one pointer move faster than the other, you can solve three extremely common types of problems:
-1. Finding the middle of a Linked List.
-2. Detecting if there is a cycle (a loop).
-3. Finding the exact starting point of that cycle.
+**Real-World Analogy**
+Imagine two runners, A and B, on a circular track. Runner A is running faster than Runner B. Since the track is circular, at some point, Runner A will catch up to and pass Runner B. This is essentially how the Fast & Slow Pointers pattern works. 
+- **Slow pointer:** Moves one step at a time
+- **Fast pointer:** Moves two steps at a time
+
+By having one pointer move faster than the other, you can solve extremely common types of problems efficiently, using only $O(n)$ time and $O(1)$ space complexity, often in just one pass through the data.
+
+## When to use Fast and Slow Pointers
+1. **Finding the middle element:** Middle of the Linked List, Reorder List
+2. **Cycle detection:** Linked List Cycle, Linked List Cycle II
+3. **Finding the start of a cycle:** Once detected, mathematically finding the entry node.
+4. **Checking for palindromes in linked lists:** Combined with list reversal, finding the middle helps check if a linked list is a palindrome.
+5. **Cycle in sequences (numbers/arrays):** Some numerical problems involve sequences that might cycle (e.g., Happy Number, Find the Duplicate Number).
+6. **List partitioning:** Split list into halves for merge sort.
 
 ---
 
@@ -30,14 +40,34 @@ WHILE fast is not null AND fast.next is not null:
 // slow is now exactly at the middle node!
 ```
 
+**Template (Java):**
+```java
+public ListNode findMiddle(ListNode head) {
+    ListNode slow = head;
+    ListNode fast = head;
+
+    // Move until fast reaches the end
+    while (fast != null && fast.next != null) {
+        slow = slow.next;          // Move slow by 1
+        fast = fast.next.next;     // Move fast by 2
+    }
+
+    return slow;  // Slow is at the middle
+}
+```
+*Note: When the list has an even number of nodes, this template returns the second middle node. If you need the first middle node, check `fast.next != null && fast.next.next != null` instead.*
+
 ---
 
 ## 2. Detecting a Cycle (Is there a loop?)
 
 Sometimes a Linked List is broken and loops back in on itself infinitely. If you just do a normal `while(head != null)`, your code will run forever and time out!
 
-**The Trick:**
+**The Trick & Mathematical Intuition:**
 If you put two people on a circular track and one runs twice as fast as the other, the fast runner will eventually "lap" the slow runner and they will collide.
+
+*Why Floyd's cycle detection works:* The standard speed choice is 1 step for the slow pointer and 2 steps for the fast pointer. The relative speed of the fast pointer with respect to the slow pointer is 1 step per iteration. Once both pointers are inside the cycle, the fast pointer gains exactly 1 step on slow every iteration. Since the cycle has finite length L, fast catches up to slow within at most L iterations.
+
 If `slow` and `fast` ever point to the exact same node, a cycle exists!
 
 ```text
@@ -56,6 +86,27 @@ WHILE fast != null AND fast.next != null:
 return FALSE
 ```
 *Note: The `fast != null && fast.next != null` condition is extremely important so your code doesn't crash trying to do `.next.next` on a `null` node.*
+
+**Template (Java):**
+```java
+public boolean hasCycle(ListNode head) {
+    ListNode slow = head;
+    ListNode fast = head;
+
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+
+        // If they meet, there's a cycle
+        if (slow == fast) {
+            return true;
+        }
+    }
+
+    // Fast reached the end, no cycle
+    return false;
+}
+```
 
 ---
 
@@ -81,4 +132,30 @@ WHILE start != fast:
     fast = fast.next
     
 RETURN start // This is the cycle starting node!
+```
+
+**Template (Java):**
+```java
+public ListNode findCycleStart(ListNode head) {
+    ListNode slow = head;
+    ListNode fast = head;
+
+    // Phase 1: Detect cycle and find meeting point
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+
+        if (slow == fast) {
+            // Phase 2: Find cycle start
+            ListNode pointer = head;
+            while (pointer != slow) {
+                pointer = pointer.next;
+                slow = slow.next;
+            }
+            return slow;  // Cycle start
+        }
+    }
+
+    return null;  // No cycle
+}
 ```

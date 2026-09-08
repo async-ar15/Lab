@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference: Linear Algebra</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+        .reference-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .reference-card {
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 6px;
+            background: #fff;
+        }
+        .reference-card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        @media (max-width: 600px) {
+            .reference-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Linear Algebra: The Muscle</h1>
+    <p>A compressed, zero-fluff reference guide for the mathematical foundation of AI data structures.</p>
+
+    <div class="reference-grid">
+        <div class="reference-card">
+            <h3>Vectors (Data)</h3>
+            <p><strong>Definition:</strong> A 1D array of numbers. Represents a point in conceptual space (an Embedding).</p>
+            <p><strong>Syntax (Python):</strong> <code>x = np.array([1, 2, 3])</code></p>
+        </div>
+
+        <div class="reference-card">
+            <h3>Matrices (Transformations)</h3>
+            <p><strong>Definition:</strong> A 2D grid of numbers. Represents an action that transforms a vector (stretching, rotating, projecting).</p>
+            <p><strong>Syntax (Python):</strong> <code>W = np.array([[1, 2], [3, 4]])</code></p>
+        </div>
+
+        <div class="reference-card">
+            <h3>Dot Product (Similarity)</h3>
+            <p><strong>Definition:</strong> <code>a · b = Σ(a_i * b_i)</code>. Measures how aligned two vectors are. High = similar concepts. Low/Zero = orthogonal/unrelated concepts.</p>
+            <p><strong>Syntax (Python):</strong> <code>np.dot(a, b)</code> or <code>a @ b</code></p>
+        </div>
+
+        <div class="reference-card">
+            <h3>Matrix Multiplication (Forward Pass)</h3>
+            <p><strong>Definition:</strong> <code>y = W @ x</code>. Pushing data through a transformation layer. Composes multiple dot products simultaneously.</p>
+            <p><strong>Syntax (Python):</strong> <code>y = W @ x</code></p>
+        </div>
+        
+        <div class="reference-card">
+            <h3>Tensors</h3>
+            <p><strong>Definition:</strong> N-dimensional generalizations. <br>0D = Scalar<br>1D = Vector<br>2D = Matrix<br>3D = Image (H, W, Channels)<br>4D = Batch of Images</p>
+        </div>
+    </div>
+
+</body>
+</html>

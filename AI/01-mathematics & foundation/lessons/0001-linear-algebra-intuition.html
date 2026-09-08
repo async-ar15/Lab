@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 01: Linear Algebra Intuition</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+    <h1>Lesson 01: Linear Algebra Intuition</h1>
+    <blockquote>Every AI model is just matrix math wearing a fancy hat.</blockquote>
+
+    <h2>The Fundamental Disconnect</h2>
+    <p>Computers do not understand concepts. They do not know what a "cat" is, what "sadness" feels like, or what a "house" looks like. Computers only process numbers.</p>
+    <p>To build Artificial Intelligence, we must bridge the gap between the physical world of concepts and the digital world of computation. <strong>Linear Algebra is the bridge.</strong> It is the mathematical language we use to translate reality into a format a computer can calculate.</p>
+
+    <h2>First Principle 1: Vectors are Concepts</h2>
+    <p>A vector is traditionally taught as "an arrow with direction and magnitude." Erase that from your mind. In AI, a vector is simply a <strong>list of numbers that represents a concept</strong>.</p>
+    
+    <p>Imagine a 2D space where the X-axis is "How fluffy is it?" and the Y-axis is "How dangerous is it?".</p>
+    <ul>
+        <li>A Golden Retriever might be the vector <code>[0.9, 0.1]</code> (very fluffy, not dangerous).</li>
+        <li>A Crocodile might be the vector <code>[0.0, 0.9]</code> (not fluffy, very dangerous).</li>
+    </ul>
+    
+    <p>By mapping concepts to numbers, we place them in a geometric space. Suddenly, we can do math on concepts. We can measure the distance between a Dog and a Crocodile. In a Large Language Model (LLM), words are mapped to vectors with 4,096 dimensions. This is called an <strong>Embedding</strong>.</p>
+
+    <h2>First Principle 2: The Dot Product is Similarity</h2>
+    <p>Once concepts are mapped to vectors in space, we need a way to ask the computer: "Are these two concepts similar?"</p>
+    <p>The <strong>Dot Product</strong> is the mathematical engine of similarity. To calculate it, you multiply the matching coordinates and add them up.</p>
+    
+    <pre><code>Vector A (Dog) = [0.9, 0.1]
+Vector B (Cat) = [0.8, 0.2]
+
+Dot Product = (0.9 * 0.8) + (0.1 * 0.2)
+            = 0.72 + 0.02
+            = 0.74 (High Similarity)</code></pre>
+
+    <p>If two vectors point in the exact same direction, their dot product is large and positive. If they are perpendicular (unrelated), their dot product is zero. If they point in opposite directions, it is negative.</p>
+    <p><strong>Where this is used:</strong> When you ask ChatGPT a question, it converts your question into a vector, and takes the dot product against millions of document vectors. The documents with the highest dot products are retrieved. This is the exact math behind RAG (Retrieval-Augmented Generation) and Attention mechanisms.</p>
+
+    <h2>First Principle 3: Matrices are Transformations</h2>
+    <p>If vectors are data, <strong>Matrices are the actions performed on that data.</strong></p>
+    <p>A matrix is a grid of numbers. When you multiply a matrix by a vector, it physically alters the vector's position in space. It can stretch it, rotate it, squish it, or project it into a completely different dimension.</p>
+
+    <p>Every single layer of a neural network is a matrix. When data (a vector) passes through a neural network, it is repeatedly multiplied by weight matrices. The neural network is literally reshaping the space the data lives in, untangling the complex concepts until a straight line can separate the "Dogs" from the "Cats".</p>
+
+    <pre><code>output = weights @ input</code></pre>
+    <p><em>(The <code>@</code> symbol in Python is matrix multiplication).</em></p>
+
+    ---
+
+    <h2>Knowledge Check</h2>
+    <p>To build storage strength, you must practice retrieving this knowledge. Answer the question below.</p>
+
+    <div class="quiz-container">
+        <div class="quiz-question" id="q1">If you want an AI to find the most conceptually similar sentence to a user's prompt, which mathematical operation is the computational engine you rely on?</div>
+        <div class="quiz-options">
+            <button class="quiz-option" onclick="checkAnswer('A', this)">A) Matrix Rotation (multiplying by an orthogonal matrix)</button>
+            <button class="quiz-option" onclick="checkAnswer('B', this)">B) The Dot Product (calculating vector alignment)</button>
+            <button class="quiz-option" onclick="checkAnswer('C', this)">C) Matrix Inversion (reversing the spatial transformation)</button>
+            <button class="quiz-option" onclick="checkAnswer('D', this)">D) Vector Addition (adding the coordinates together)</button>
+        </div>
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+    <script>
+        function checkAnswer(answer, buttonElement) {
+            const options = buttonElement.parentElement.children;
+            for(let opt of options) {
+                opt.className = 'quiz-option';
+                opt.disabled = true;
+            }
+            
+            const feedback = document.getElementById('feedback');
+            
+            if (answer === 'B') {
+                buttonElement.className = 'quiz-option correct';
+                feedback.innerHTML = "<strong>Correct.</strong> The dot product mathematically measures how aligned two vectors are in space. High dot product = high similarity. This is exactly how vector databases and search engines work.";
+                feedback.className = "feedback show";
+                feedback.style.color = "#155724";
+            } else {
+                buttonElement.className = 'quiz-option wrong';
+                // Highlight correct answer
+                options[1].className = 'quiz-option correct';
+                feedback.innerHTML = "<strong>Incorrect.</strong> The correct answer is B. Matrix rotation changes data, matrix inversion reverses a transformation, and addition combines data. Only the Dot Product measures alignment (similarity) between two existing vectors.";
+                feedback.className = "feedback show";
+                feedback.style.color = "#721c24";
+            }
+        }
+    </script>
+
+    ---
+
+    <h2>Next Steps & Action Items</h2>
+    <p>You have now internalized the intuition: Vectors are data. Matrices are transformations. The Dot product is similarity.</p>
+    <p><strong>Your task:</strong> Ask me (your AI teacher) any follow-up questions if the geometry of these operations isn't completely clear in your head. If you are ready, let me know and we will move to the next lesson: <strong>Matrix Operations and Shapes</strong>, where we actually code these math engines from scratch in Python.</p>
+
+</body>
+</html>

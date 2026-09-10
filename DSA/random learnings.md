@@ -41,3 +41,6 @@ Sometimes you might understand the algorithmic pattern, but you get stuck becaus
 
 ### Data Structure Insights
 - **HashSet vs Frequency Maps:** A `HashSet` only tells you *if* an element exists, not *how many times* it exists. When solving problems (like sliding windows) where the *count* of characters/elements matters, you must use a `HashMap` or a fixed-size frequency array (e.g., `int[26]` for lowercase alphabets) to maintain the frequencies as the window shrinks and expands.
+
+### Hashing Specific Learnings
+- **HashMap vs Array Map:** If a problem constraints specify that the input consists of a small, fixed set of characters (like "only lowercase English letters"), using a primitive array (like `int[] count = new int[26]`) is significantly faster and uses less memory overhead than a full Java `HashMap`. Always check the constraints to see if the input space allows for this optimization!

@@ -33,6 +33,10 @@ Pointing out these things:
 - iv. Important key words for the approach 
 - v. basic level of understanding of the question & what kinda solution might work for us 
 
+
+- we are given with 2 string 
+- can we generate the string 1 with the  string letters of the string 2 or not !!!
+
 # understanding the constraints
 
 Pointing out these things: 

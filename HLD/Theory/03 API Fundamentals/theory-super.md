@@ -4,39 +4,39 @@
 
 ```mermaid
 graph TB
-    API[APIs (Contracts & Boundaries)] --> DESIGN[API Design Principles]
-    API --> ARCH[Architectural Styles]
-    API --> PROT[Protection & Limits]
-    API --> GATEWAY[API Gateway]
+    API["APIs (Contracts & Boundaries)"] --> DESIGN["API Design Principles"]
+    API --> ARCH["Architectural Styles"]
+    API --> PROT["Protection & Limits"]
+    API --> GATEWAY["API Gateway"]
 
-    ARCH --> REST[REST]
-    ARCH --> GQL[GraphQL]
-    ARCH --> WS[WebSockets]
-    ARCH --> WEBHOOKS[Webhooks]
+    ARCH --> REST["REST"]
+    ARCH --> GQL["GraphQL"]
+    ARCH --> WS["WebSockets"]
+    ARCH --> WEBHOOKS["Webhooks"]
 
-    DESIGN --> HTTP[HTTP Methods & Status Codes]
-    DESIGN --> NAMING[Resource Naming]
-    DESIGN --> IDEM[Idempotency]
+    DESIGN --> HTTP["HTTP Methods & Status Codes"]
+    DESIGN --> NAMING["Resource Naming"]
+    DESIGN --> IDEM["Idempotency"]
 
-    PROT --> AUTH[Authentication & Authorization]
-    PROT --> RATE[Rate Limiting]
+    PROT --> AUTH["Authentication & Authorization"]
+    PROT --> RATE["Rate Limiting"]
 
-    RATE --> ALGOS[Rate Limiting Algorithms]
-    ALGOS --> TB[Token Bucket]
-    ALGOS --> LB[Leaky Bucket]
-    ALGOS --> FWC[Fixed Window Counter]
-    ALGOS --> SWL[Sliding Window Log]
-    ALGOS --> SWC[Sliding Window Counter]
+    RATE --> ALGOS["Rate Limiting Algorithms"]
+    ALGOS --> TB["Token Bucket"]
+    ALGOS --> LB["Leaky Bucket"]
+    ALGOS --> FWC["Fixed Window Counter"]
+    ALGOS --> SWL["Sliding Window Log"]
+    ALGOS --> SWC["Sliding Window Counter"]
 
-    GATEWAY --> ROUTING[Request Routing]
+    GATEWAY --> ROUTING["Request Routing"]
     GATEWAY --> RATE
     GATEWAY --> AUTH
-    GATEWAY --> CACHE[Caching]
-    GATEWAY --> LB2[Load Balancing]
-    GATEWAY --> CB[Circuit Breaking]
+    GATEWAY --> CACHE["Caching"]
+    GATEWAY --> LB2["Load Balancing"]
+    GATEWAY --> CB["Circuit Breaking"]
 
-    IDEM --> RETRY[Safe Retries]
-    WEBHOOKS --> ASYNC[Async Events]
+    IDEM --> RETRY["Safe Retries"]
+    WEBHOOKS --> ASYNC["Async Events"]
 ```
 
 ---
